@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сабақ кестесі — Ағылшын + Математика</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F0F4FA;
+    --surface: #FFFFFF;
+    --surface2: #F7F9FC;
+    --border: #DDE3ED;
+    --text: #1A2235;
+    --text-muted: #6B7A96;
+    --eng: #2563EB;
+    --eng-bg: #EEF4FF;
+    --eng-badge: #DBEAFE;
+    --math: #D97706;
+    --math-bg: #FFFBEB;
+    --math-badge: #FEF3C7;
+    --accent: #1E3A6E;
+    --tag-bg: #E8EDF5;
+    --tag-text: #374362;
+    --header-h: 64px;
+    --radius: 10px;
+    --radius-sm: 6px;
+    --shadow: 0 1px 3px rgba(30,58,110,.08), 0 4px 12px rgba(30,58,110,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F1624; --surface: #1A2235; --surface2: #1F2A3D; --border: #2D3A52;
+      --text: #E8EEFA; --text-muted: #7A8DAD; --accent: #5A8BF5;
+      --eng-bg: #172044; --eng-badge: #1D2E6A; --math-bg: #2A1C04; --math-badge: #3D2906;
+      --tag-bg: #1F2A3D; --tag-text: #A0B0CC; --shadow: 0 1px 3px rgba(0,0,0,.3), 0 4px 12px rgba(0,0,0,.25);
+    }
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  /* ─── HEADER ─── */
+  header {
+    background: var(--accent);
+    color: #fff;
+    height: var(--header-h);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 24px; position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+  .logo { font-family: 'Golos Text', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: -.3px; }
+  .logo span { opacity: .65; font-weight: 400; margin-left: 6px; font-size: .9rem; }
+  /* ─── FILTERS ─── */
+  .filters-wrap { background: var(--surface); border-bottom: 1px solid var(--border); padding: 14px 24px; }
+  .filters-grid { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; max-width: 1400px; margin: 0 auto; }
+  .fgroup { display: flex; flex-direction: column; gap: 4px; }
+  .fgroup label { font-size: .72rem; font-weight: 600; color: var(--text-muted); letter-spacing: .4px; text-transform: uppercase; }
+  select, .clear-btn {
+    border: 1px solid var(--border); background: var(--surface2); color: var(--text);
+    border-radius: var(--radius-sm); padding: 7px 10px; font-size: .85rem;
+    font-family: inherit; cursor: pointer; transition: border-color .15s;
+    min-width: 140px;
+  }
+  select:focus { outline: none; border-color: var(--accent); }
+  .clear-btn {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+    font-weight: 600; padding: 7px 16px; align-self: flex-end;
+  }
+  .clear-btn:hover { opacity: .9; }
+  /* ─── STATS ─── */
+  .stats-bar { max-width: 1400px; margin: 16px auto 0; padding: 0 24px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .stat-pill {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 20px; padding: 4px 14px; font-size: .8rem; color: var(--text-muted);
+  }
+  .stat-pill b { color: var(--text); }
+  /* ─── TABLE ─── */
+  .table-wrap { max-width: 1400px; margin: 16px auto 40px; padding: 0 24px; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  thead { background: var(--accent); }
+  thead th { color: #fff; font-size: .78rem; font-weight: 600; text-align: left; padding: 11px 14px; white-space: nowrap; }
+  tbody tr { border-bottom: 1px solid var(--border); transition: background .1s; }
+  tbody tr:hover { background: var(--surface2); }
+  tbody tr:last-child { border-bottom: none; }
+  td { padding: 9px 14px; font-size: .84rem; vertical-align: middle; }
+  /* ─── BADGES ─── */
+  .badge {
+    display: inline-block; border-radius: 4px; padding: 2px 8px; font-size: .75rem; font-weight: 600; white-space: nowrap;
+  }
+  .badge-eng { background: var(--eng-badge); color: var(--eng); }
+  .badge-math { background: var(--math-badge); color: var(--math); }
+  .badge-s1 { background: #E0F2FE; color: #0369A1; }
+  .badge-s2 { background: #FEF9C3; color: #854D0E; }
+  .badge-s1d { background: #DBEAFE; }
+  .badge-s2d { background: #FEF3C7; }
+  .row-eng td:first-child { border-left: 3px solid var(--eng); }
+  .row-math td:first-child { border-left: 3px solid var(--math); }
+  /* ─── GRID VIEW ─── */
+  .view-toggle { display: flex; gap: 6px; align-items: center; }
+  .vtbtn { background: transparent; border: 1px solid rgba(255,255,255,.4); color: rgba(255,255,255,.7); border-radius: 5px; padding: 4px 10px; font-size: .75rem; cursor: pointer; transition: .15s; }
+  .vtbtn.active { background: rgba(255,255,255,.2); color: #fff; border-color: rgba(255,255,255,.6); }
+  .cards-grid { max-width: 1400px; margin: 16px auto 40px; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+  .card {
+    background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow);
+    border: 1px solid var(--border); padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .card.card-eng { border-left: 4px solid var(--eng); }
+  .card.card-math { border-left: 4px solid var(--math); }
+  .card-top { display: flex; justify-content: space-between; align-items: center; }
+  .card-group { font-family: 'Golos Text', sans-serif; font-size: .95rem; font-weight: 700; }
+  .card-subj { font-size: .8rem; font-weight: 600; }
+  .card-subj.eng { color: var(--eng); } .card-subj.math { color: var(--math); }
+  .card-meta { display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag { background: var(--tag-bg); color: var(--tag-text); border-radius: 4px; padding: 2px 8px; font-size: .74rem; font-weight: 500; }
+  /* ─── EMPTY ─── */
+  .empty { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: .95rem; }
+  .empty svg { display: block; margin: 0 auto 12px; opacity: .3; }
+  /* ─── SCHEDULE GRID ─── */
+  .week-grid { max-width: 1400px; margin: 16px auto 40px; padding: 0 24px; }
+  .wg-table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .wg-table th { background: var(--accent); color: #fff; padding: 10px 12px; font-size: .8rem; font-weight: 600; white-space: nowrap; min-width: 140px; }
+  .wg-table .slot-label { background: var(--surface2); color: var(--text-muted); font-size: .75rem; font-weight: 600; padding: 8px 12px; white-space: nowrap; min-width: 90px; border-right: 1px solid var(--border); }
+  .wg-table td { border: 1px solid var(--border); padding: 5px 7px; vertical-align: top; min-height: 50px; }
+  .slot-cell { display: flex; flex-direction: column; gap: 4px; }
+  .slot-item { border-radius: 5px; padding: 4px 7px; font-size: .76rem; line-height: 1.4; }
+  .slot-item.si-eng { background: var(--eng-bg); border-left: 3px solid var(--eng); }
+  .slot-item.si-math { background: var(--math-bg); border-left: 3px solid var(--math); }
+  .si-grp { font-weight: 700; }
+  .si-info { color: var(--text-muted); }
+  @media(max-width:640px){
+    header{padding:0 14px;} .filters-wrap{padding:12px 14px;} .filters-grid{gap:8px;}
+    select{min-width:120px;} .table-wrap,.cards-grid,.week-grid,.stats-bar{padding:0 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Сабақ кестесі <span>Ағылшын · Математика · 2026–2027</span></div>
+  <div class="view-toggle">
+    <button class="vtbtn active" onclick="setView('table')" id="v-table">Тізім</button>
+    <button class="vtbtn" onclick="setView('cards')" id="v-cards">Карточки</button>
+    <button class="vtbtn" onclick="setView('week')" id="v-week">Апта</button>
+  </div>
+</header>
+
+<div class="filters-wrap">
+  <div class="filters-grid">
+    <div class="fgroup"><label>Ауысым</label>
+      <select id="f-shift" onchange="applyFilters()">
+        <option value="">Барлығы</option>
+        <option value="1-ауысым">1-ауысым</option>
+        <option value="2-ауысым">2-ауысым</option>
+      </select></div>
+    <div class="fgroup"><label>Күн</label>
+      <select id="f-day" onchange="applyFilters()">
+        <option value="">Барлығы</option>
+        <option>Дүйсенбі</option><option>Сейсенбі</option>
+        <option>Сәрсенбі</option><option>Бейсенбі</option><option>Жұма</option>
+      </select></div>
+    <div class="fgroup"><label>Пән</label>
+      <select id="f-subj" onchange="applyFilters()">
+        <option value="">Барлығы</option>
+        <option>Ағылшын</option><option>Математика</option>
+      </select></div>
+    <div class="fgroup"><label>Ұстаз</label>
+      <select id="f-tutor" onchange="applyFilters()">
+        <option value="">Барлығы</option>
+        <option>Қарлығаш</option><option>Эрфан</option>
+        <option>Ағылшын ұстаз1</option><option>Ағылшын ұстаз2</option><option>Фарида</option>
+        <option>Аружан</option><option>Матем.ұстаз1</option><option>Әділжан</option><option>Тілекші</option>
+      </select></div>
+    <div class="fgroup"><label>Кабинет</label>
+      <select id="f-room" onchange="applyFilters()">
+        <option value="">Барлығы</option>
+        <option>Конференц зал</option><option>Таным</option><option>203</option><option>222</option>
+        <option>201</option><option>202</option><option>211</option><option>212</option>
+      </select></div>
+    <div class="fgroup"><label>Топ</label>
+      <select id="f-group" onchange="applyFilters()">
+        <option value="">Барлығы</option>
+      </select></div>
+    <button class="clear-btn" onclick="clearFilters()">Тазалау</button>
+  </div>
+</div>
+
+<div class="stats-bar" id="stats-bar"></div>
+<div class="table-wrap" id="view-table"><table><thead><tr>
+  <th>Күн</th><th>Ауысым</th><th>Уақыт</th><th>Кабинет</th><th>Ұстаз</th><th>Пән</th><th>Топ</th>
+</tr></thead><tbody id="tbl-body"></tbody></table><div class="empty" id="tbl-empty" style="display:none">
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Сабақ табылмады</div></div>
+<div class="cards-grid" id="view-cards" style="display:none"></div>
+<div class="week-grid" id="view-week" style="display:none"></div>
+
+<script>
+const K='Қарлығаш', ER='Эрфан', A1='Ағылшын ұстаз1', A2='Ағылшын ұстаз2', F='Фарида';
+const AR='Аружан', M1='Матем.ұстаз1', AD='Әділжан', T='Тілекші';
+const E='Ағылшын', M='Математика';
+const KZ='Конференц зал', TN='Таным';
+const S1=[['S1','10:45–11:25'],['S2','11:30–12:10'],['S3','12:15–12:55'],['S4','13:00–13:40']];
+const S2=[['T1','14:00–14:40'],['T2','14:45–15:25'],['T3','15:30–16:10'],['T4','16:15–16:55']];
+const TIME=Object.fromEntries([...S1,...S2]);
+const DAYS=['Дүйсенбі','Сейсенбі','Сәрсенбі','Бейсенбі','Жұма'];
+const SLOTS=[...S1,...S2].map(x=>x[0]);
+const SORDER=Object.fromEntries(SLOTS.map((s,i)=>[s,i]));
+
+function L(d,s,t,sub,g,rm){return{day:d,slot:s,tutor:t,subject:sub,group:g,room:rm,
+  shift:s.startsWith('S')?'1-ауысым':'2-ауысым',time:TIME[s]};}
+
+const ALL=[
+  // 1-ауысым — Қарлығаш (КЗ)
+  ...['Дүйсенбі','Сәрсенбі','Жұма'].flatMap(d=>[L(d,'S1',K,E,'2-сынып 1-топ',KZ),L(d,'S2',K,E,'2-сынып 2-топ',KZ)]),
+  ...['Дүйсенбі','Сәрсенбі','Бейсенбі'].flatMap(d=>[L(d,'S3',K,E,'3-сынып 1-топ',KZ),L(d,'S4',K,E,'3-сынып 2-топ',KZ)]),
+  ...['Сейсенбі','Бейсенбі'].flatMap(d=>[L(d,'S1',K,E,'4-сынып 1-топ (орыс)',KZ),L(d,'S2',K,E,'5-сынып 1-топ (орыс)',KZ)]),
+  L('Жұма','S3',K,E,'4-сынып 1-топ (орыс)',KZ), L('Жұма','S4',K,E,'5-сынып 1-топ (орыс)',KZ),
+  // Аружан (Таным)
+  ...['Дүйсенбі','Сәрсенбі'].flatMap(d=>[L(d,'S1',AR,M,'2-сынып 2-топ',TN),L(d,'S2',AR,M,'2-сынып 1-топ',TN)]),
+  ...['Дүйсенбі','Бейсенбі'].flatMap(d=>[L(d,'S3',AR,M,'3-сынып 2-топ',TN),L(d,'S4',AR,M,'3-сынып 1-топ',TN)]),
+  ...['Сейсенбі','Бейсенбі'].flatMap(d=>[L(d,'S1',AR,M,'5-сынып 1-топ (орыс)',TN),L(d,'S2',AR,M,'4-сынып 1-топ (орыс)',TN)]),
+  // Эрфан (203)
+  ...['Дүйсенбі','Сәрсенбі','Жұма'].flatMap(d=>[L(d,'S3',ER,E,'6-сынып 1-топ (орыс)','203'),L(d,'S4',ER,E,'6-сынып 2-топ','203')]),
+  ...['Сейсенбі','Бейсенбі'].flatMap(d=>[L(d,'S3',ER,E,'6-сынып 3-топ','203'),L(d,'S4',ER,E,'6-сынып 4-топ','203')]),
+  L('Жұма','S1',ER,E,'6-сынып 3-топ','203'), L('Жұма','S2',ER,E,'6-сынып 4-топ','203'),
+  // Матем.ұстаз1 (201)
+  ...['Дүйсенбі','Сәрсенбі'].flatMap(d=>[L(d,'S3',M1,M,'6-сынып 2-топ','201'),L(d,'S4',M1,M,'6-сынып 1-топ (орыс)','201')]),
+  ...['Сейсенбі','Бейсенбі'].flatMap(d=>[L(d,'S3',M1,M,'6-сынып 4-топ','201'),L(d,'S4',M1,M,'6-сынып 3-топ','201')]),
+  L('Дүйсенбі','S2',M1,M,'7-сынып 2-топ','203'), L('Сәрсенбі','S2',M1,M,'7-сынып 1-топ','203'),
+  L('Жұма','S3',M1,M,'7-сынып 2-топ','201'), L('Жұма','S4',M1,M,'7-сынып 1-топ','201'),
+  // Ағылшын ұстаз1 (202)
+  L('Дүйсенбі','S3',A1,E,'7-сынып 2-топ','202'), L('Дүйсенбі','S4',A1,E,'7-сынып 1-топ','202'),
+  L('Сәрсенбі','S3',A1,E,'7-сынып 1-топ','202'), L('Сәрсенбі','S4',A1,E,'7-сынып 2-топ','202'),
+  L('Жұма','S3',A1,E,'7-сынып 1-топ','202'), L('Жұма','S4',A1,E,'7-сынып 2-топ','202'),
+  ...['Сейсенбі','Бейсенбі'].flatMap(d=>[L(d,'S3',A1,E,'7-сынып 3-топ','202'),L(d,'S4',A1,E,'8-сынып 1-топ','202')]),
+  L('Жұма','S1',A1,E,'7-сынып 3-топ',TN), L('Жұма','S2',A1,E,'8-сынып 1-топ',TN),
+  // Ағылшын ұстаз2 (211)
+  ...['Дүйсенбі','Сәрсенбі','Жұма'].map(d=>L(d,'S3',A2,E,'8-сынып 2-топ','211')),
+  // Әділжан (212)
+  ...['Сейсенбі','Бейсенбі'].flatMap(d=>[L(d,'S3',AD,M,'8-сынып 1-топ','212'),L(d,'S4',AD,M,'7-сынып 3-топ','212')]),
+  ...['Дүйсенбі','Сәрсенбі'].map(d=>L(d,'S4',AD,M,'8-сынып 2-топ','212')),
+  // 2-ауысым
+  ...['Дүйсенбі','Сәрсенбі','Жұма'].flatMap(d=>[
+    L(d,'T1',A2,E,'4-сынып 2-топ','203'), L(d,'T2',A2,E,'4-сынып 3-топ','203'), L(d,'T3',A2,E,'5-сынып 2-топ','203')]),
+  ...['Дүйсенбі','Сәрсенбі'].flatMap(d=>[
+    L(d,'T1',AD,M,'4-сынып 3-топ','222'), L(d,'T2',AD,M,'4-сынып 2-топ','222'), L(d,'T4',AD,M,'5-сынып 2-топ','222')]),
+  ...['Сейсенбі','Бейсенбі','Жұма'].flatMap(d=>[
+    L(d,'T1',F,E,'5-сынып 3-топ',TN), L(d,'T2',F,E,'5-сынып 4-топ',TN), L(d,'T3',F,E,'9-сынып 1-топ',TN)]),
+  ...['Сейсенбі','Бейсенбі'].flatMap(d=>[
+    L(d,'T1',T,M,'5-сынып 4-топ','222'), L(d,'T2',T,M,'5-сынып 3-топ','222'), L(d,'T4',T,M,'9-сынып 1-топ','222')]),
+];
+
+// Populate group filter
+const groups=[...new Set(ALL.map(r=>r.group))].sort((a,b)=>{
+  const n1=parseInt(a),n2=parseInt(b); return n1!==n2?n1-n2:a.localeCompare(b,'kk');
+});
+const fg=document.getElementById('f-group');
+groups.forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=g;fg.appendChild(o);});
+
+let currentView='table';
+function setView(v){
+  currentView=v;
+  ['table','cards','week'].forEach(x=>{
+    document.getElementById('view-'+x).style.display=x===v?'':'none';
+    document.getElementById('v-'+x).classList.toggle('active',x===v);
+  });
+  applyFilters();
+}
+
+function getFilters(){
+  return{shift:document.getElementById('f-shift').value,
+    day:document.getElementById('f-day').value,
+    subj:document.getElementById('f-subj').value,
+    tutor:document.getElementById('f-tutor').value,
+    room:document.getElementById('f-room').value,
+    group:document.getElementById('f-group').value};
+}
+function clearFilters(){
+  ['f-shift','f-day','f-subj','f-tutor','f-room','f-group'].forEach(id=>document.getElementById(id).value='');
+  applyFilters();
+}
+
+function filter(f,data){
+  return data.filter(r=>
+    (!f.shift||r.shift===f.shift)&&
+    (!f.day||r.day===f.day)&&
+    (!f.subj||r.subject===f.subj)&&
+    (!f.tutor||r.tutor===f.tutor)&&
+    (!f.room||r.room===f.room)&&
+    (!f.group||r.group===f.group));
+}
+
+const DORD={Дүйсенбі:0,Сейсенбі:1,Сәрсенбі:2,Бейсенбі:3,Жұма:4};
+function sorted(data){return [...data].sort((a,b)=>DORD[a.day]-DORD[b.day]||SORDER[a.slot]-SORDER[b.slot]);}
+
+function subClass(s){return s===E?'eng':'math';}
+function badgeSubj(s){return `<span class="badge badge-${subClass(s)}">${s}</span>`;}
+function badgeShift(s){return `<span class="badge ${s==='1-ауысым'?'badge-s1':'badge-s2'}">${s}</span>`;}
+
+function renderTable(data){
+  const tbody=document.getElementById('tbl-body');
+  const empty=document.getElementById('tbl-empty');
+  if(!data.length){tbody.innerHTML='';empty.style.display='';return;}
+  empty.style.display='none';
+  tbody.innerHTML=sorted(data).map(r=>`
+    <tr class="row-${subClass(r.subject)}">
+      <td><b>${r.day}</b></td>
+      <td>${badgeShift(r.shift)}</td>
+      <td style="white-space:nowrap;font-variant-numeric:tabular-nums">${r.time}</td>
+      <td>${r.room}</td>
+      <td>${r.tutor}</td>
+      <td>${badgeSubj(r.subject)}</td>
+      <td>${r.group}</td>
+    </tr>`).join('');
+}
+
+function renderCards(data){
+  const wrap=document.getElementById('view-cards');
+  if(!data.length){wrap.innerHTML='<div class="empty"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Сабақ табылмады</div>';return;}
+  wrap.innerHTML=sorted(data).map(r=>`
+    <div class="card card-${subClass(r.subject)}">
+      <div class="card-top">
+        <div class="card-group">${r.group}</div>
+        <div class="card-subj ${subClass(r.subject)}">${r.subject}</div>
+      </div>
+      <div class="card-meta">
+        <span class="tag">📅 ${r.day}</span>
+        <span class="tag">🕐 ${r.time}</span>
+        <span class="tag">📍 ${r.room}</span>
+        <span class="tag">👩‍🏫 ${r.tutor}</span>
+        <span class="tag">${r.shift}</span>
+      </div>
+    </div>`).join('');
+}
+
+function renderWeek(data){
+  const wrap=document.getElementById('view-week');
+  const byDS={};
+  data.forEach(r=>{const k=r.day+'|'+r.slot;(byDS[k]=byDS[k]||[]).push(r);});
+  const f=getFilters();
+  const activeDays=f.day?[f.day]:DAYS;
+  const activeSlots=SLOTS.filter(s=>{
+    if(f.shift==='1-ауысым') return s.startsWith('S');
+    if(f.shift==='2-ауысым') return !s.startsWith('S');
+    return true;
+  });
+  if(!data.length){wrap.innerHTML='<div class="empty"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Сабақ табылмады</div>';return;}
+  let s1slots=activeSlots.filter(s=>s.startsWith('S'));
+  let s2slots=activeSlots.filter(s=>!s.startsWith('S'));
+  let html=`<table class="wg-table"><thead><tr><th>Уақыт</th>${activeDays.map(d=>`<th>${d}</th>`).join('')}</tr></thead><tbody>`;
+  const renderSlots=slots=>{
+    slots.forEach(sl=>{
+      html+=`<tr><td class="slot-label">${TIME[sl]}</td>`;
+      activeDays.forEach(d=>{
+        const items=(byDS[d+'|'+sl]||[]);
+        html+=`<td><div class="slot-cell">${items.map(r=>`
+          <div class="slot-item si-${subClass(r.subject)}">
+            <div class="si-grp">${r.group}</div>
+            <div class="si-info">${r.tutor} · ${r.room}</div>
+          </div>`).join('')}</div></td>`;
+      });
+      html+='</tr>';
+    });
+  };
+  if(s1slots.length){html+=`<tr><td colspan="${activeDays.length+1}" style="background:var(--surface2);font-size:.75rem;font-weight:600;color:var(--text-muted);padding:6px 12px;border-bottom:1px solid var(--border)">🌅 1-АУЫСЫМ</td></tr>`;renderSlots(s1slots);}
+  if(s2slots.length){html+=`<tr><td colspan="${activeDays.length+1}" style="background:var(--surface2);font-size:.75rem;font-weight:600;color:var(--math);padding:6px 12px;border-bottom:1px solid var(--border)">🌆 2-АУЫСЫМ</td></tr>`;renderSlots(s2slots);}
+  html+='</tbody></table>';
+  wrap.innerHTML=html;
+}
+
+function applyFilters(){
+  const f=getFilters();
+  const data=filter(f,ALL);
+  // Stats
+  const eCount=data.filter(r=>r.subject===E).length;
+  const mCount=data.filter(r=>r.subject===M).length;
+  const tutors=[...new Set(data.map(r=>r.tutor))].length;
+  document.getElementById('stats-bar').innerHTML=`
+    <div class="stat-pill">Барлық сабақ: <b>${data.length}</b></div>
+    <div class="stat-pill">Ағылшын: <b>${eCount}</b></div>
+    <div class="stat-pill">Математика: <b>${mCount}</b></div>
+    <div class="stat-pill">Ұстаздар: <b>${tutors}</b></div>`;
+  if(currentView==='table') renderTable(data);
+  else if(currentView==='cards') renderCards(data);
+  else renderWeek(data);
+}
+
+applyFilters();
+</script>
+</body>
+</html>
