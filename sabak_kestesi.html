@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="kk">
-<head>
+<html lang="kk" data-lang="kk">
+<head><!-- frame-runtime --><script>window.__FRAME_PREAMBLE={"v":1,"capabilities":{"artifact":"artifact.BYHii2AW.js","assets":"assets.8Gk803W0.js","comments":"comments.BiSa9uTt.js","db":"db.h-3sndFg.js","downloads":"downloads.th1YuAIk.js","embed":"embed.eqL6deQM.js","endpoints":"endpoints.CfzSv5nM.js","mcp":"mcp.Bvma3qD7.js","network":"network.B5UA9Su4.js","permissions":"permissions.BNySkLV5.js","room":"room.VSdFwTE9.js","sample":"sample.BW2Uysoh.js","self":"artifact.BYHii2AW.js","user":"user.BpKav-Rf.js"},"transforms":"_transforms.DSB5x63f.js","comments":"_comments.CySkkG-P.js","translate":"_translate.5HCW4BJh.js","ldx":"_ldx.DYFNSryD.js"}</script><script>(function(){"use strict";var ce=["light","dark","system"],le=/^[A-Za-z0-9_-]{1,64}$/,Z=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,ue=new Set(["class","hidden","value","checked","style","title","alt","placeholder","lang","dir","role","tabindex","disabled","readonly","contenteditable","open","colspan","rowspan"]);function fe(e){const t=e.toLowerCase();return t.startsWith("data-")||t.startsWith("aria-")||ue.has(t)}var He="http://www.w3.org/1999/xhtml",de="http://www.w3.org/2000/svg",pe=new Set(["script","style","iframe","noscript","noframes","noembed","xmp","plaintext","template","title","textarea","object","embed"]),me=new Set(["script","style"]);function he(e){const t=e.localName.toLowerCase();return e.namespaceURI==="http://www.w3.org/1999/xhtml"?!pe.has(t):e.namespaceURI===de?!me.has(t):!1}function D(e,t){return e===t||(e===160||e===32)&&(t===160||t===32)}function _e(e,t){const r=e.length,n=t.length;let s=0;for(;s<r&&s<n&&D(e.charCodeAt(s),t.charCodeAt(s));)s++;let o=0;for(;o<r-s&&o<n-s&&D(e.charCodeAt(r-1-o),t.charCodeAt(n-1-o));)o++;return{p:s,s:o}}function ve(e,t){const r=e.firstChild;if(e.childNodes.length!==1||r===null||r.nodeType!==Node.TEXT_NODE){e.textContent=t;return}const n=r.data,s=n.length,o=t.length,{p:i,s:c}=_e(n,t);i===s&&c===0&&s===o||r.replaceData(i,s-i-c,t.slice(i,o-c));const m=r.data,d=e.ownerDocument.getSelection?.()??null,v=d!==null&&d.rangeCount>0&&(d.anchorNode===r||d.focusNode===r)?{anchor:d.anchorNode,anchorOffset:d.anchorOffset,focus:d.focusNode,focusOffset:d.focusOffset}:null;let p=-1,y=-1;for(let h=0;h<m.length&&h<t.length;h++){const E=m.charCodeAt(h),A=t.charCodeAt(h);E!==A&&D(E,A)&&(p<0&&(p=h),y=h)}const w=p>=0;if(w&&r.replaceData(p,y-p+1,t.slice(p,y+1)),w&&v!==null&&v.anchor!==null&&v.focus!==null)try{d.setBaseAndExtent(v.anchor,v.anchorOffset,v.focus,v.focusOffset)}catch{}}var ye=new Set(["html","head","body","frameset"]);function we(e){return e.namespaceURI==="http://www.w3.org/1999/xhtml"&&ye.has(e.localName)}function ge(e){if(e===null||typeof e!="object")return!1;const t=e;if(typeof t.target!="string"||!le.test(t.target)||t.text!==void 0&&typeof t.text!="string")return!1;if(t.attrsSet!==void 0){if(t.attrsSet===null||typeof t.attrsSet!="object")return!1;for(const[r,n]of Object.entries(t.attrsSet))if(!Z.test(r)||typeof n!="string")return!1}if(t.attrsRemoved!==void 0){if(!Array.isArray(t.attrsRemoved))return!1;for(const r of t.attrsRemoved)if(typeof r!="string"||!Z.test(r))return!1}return!0}function Ee(e,t){if(e===null||typeof e!="object")return!1;const{seq:r,elements:n}=e;if(typeof r!="number"||!Number.isSafeInteger(r)||!Array.isArray(n)||n.length===0||n.length>64)return!1;for(let s=0;s<n.length;s++)if(!t(n[s]))return!1;return!0}function be(e){return e===null||typeof e!="object"?!1:Ee(e.__frame_patch,ge)}function Ae(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_init;return t!==null&&typeof t=="object"}function Te(e){return e!==null&&typeof e=="object"&&e.__frame_size_poke===!0}function Re(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_theme;if(t===null||typeof t!="object")return!1;const r=t.theme;return typeof r=="string"&&ce.includes(r)}var S=/^[\w.-]+\.js$/;function Se(e,t,r){return r?"inert":typeof t=="string"&&S.test(t)?e?[t]:"inert":e?"inert":"framed"}var We="frame_ldx_runtime",Ke="script#an-form";function Le(){return{post(e,t){parent.postMessage(e,t)},on(e){const t=r=>{r.source===parent&&e(r.data,r.origin,r.isTrusted)};return addEventListener("message",t),()=>removeEventListener("message",t)}}}function ke(){return{post:()=>{},on:()=>()=>{}}}var I="__frame_scroll",Pe=150,Oe=310,Ce=160,Me=3e4;function je(){let e=0,t=!1,r=!1,n=!1,s=0,o=null;const i=u=>{try{sessionStorage.setItem(I,JSON.stringify({y:u}))}catch{}},c=()=>{if(clearTimeout(e),o===null)return;const u=o;o=null,i(u)},m=()=>{if(t){t=!1;return}r=!0,o=scrollY,clearTimeout(e),e=setTimeout(c,Pe)};try{addEventListener("scroll",m,{passive:!0}),addEventListener("pagehide",c)}catch{}const d=()=>{let u;try{u=sessionStorage.getItem(I)}catch{return null}if(u===null)return null;let a;try{a=JSON.parse(u)}catch{a=null}const f=a?.y;if(!(typeof f=="number"&&Number.isFinite(f)&&f>=0)){try{sessionStorage.removeItem(I)}catch{}return null}return f};let v=!1;const p=u=>{try{const a=scrollY;scrollTo({top:u,left:0,behavior:"instant"}),s=u,n=!0,clearTimeout(e),o=null,i(u);const f=scrollY;f!==a&&(t=!0),f!==u&&!v&&(v=!0,addEventListener("load",()=>{try{if(scrollY===f){const b=d();p(b!==null?b:s)}}catch{}},{once:!0}))}catch{}},y=()=>{try{return!!location.hash}catch{return!0}};let w=!1;const h=()=>{try{if(w||innerWidth>Oe||innerHeight>Ce)return;w=!0;const u=Date.now(),a=()=>{try{removeEventListener("resize",a)}catch{}if(Date.now()-u>Me||r||y())return;const f=d();p(f!==null?f:s)};addEventListener("resize",a)}catch{}};let E=!1,A=!1;return{restore(){if(E||(E=!0,y()))return;const u=d();u!==null&&(p(u),h())},promoted(){if(A||(A=!0,y()))return;const u=d();u!==null?(p(u),h()):n&&p(s)}}}function Ne(e,t,r,n){let s=null;try{s=window.trustedTypes?.createPolicy("frame-runtime",{createScriptURL:m=>m})??null}catch{}const o=window.Worker,i=o?.prototype,c=Object.freeze({Worker:o,workerOn:i?.addEventListener,workerPost:i?.postMessage,workerTerminate:i?.terminate,fetch:window.fetch.bind(window),preventDefault:Event.prototype.preventDefault,policy:s,origins:t});r(e).then(m=>m?.bootTopLevel?m.bootTopLevel(c,n):n.settle()).catch(()=>n.settle())}var $e="modulepreload",qe=function(e){return"/"+e},Xe={},Be=function(t,r,n){let s=Promise.resolve();function o(i){const c=new Event("vite:preloadError",{cancelable:!0});if(c.payload=i,window.dispatchEvent(c),!c.defaultPrevented)throw i}return s.then(i=>{for(const c of i||[])c.status==="rejected"&&o(c.reason);return t().catch(o)})},De=window===top,J=Object.getOwnPropertyDescriptor(window,"claude"),O=Se(De,window.__FRAME_PREAMBLE?.topLevel,J?.writable===!1),U=typeof O=="object"&&O[0],_=U?ke():Le();(function(){const e=Object.defineProperty,t=globalThis,r=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let n=0;for(let s=0;s<r.length;s++){const o=r[s];try{e(t,o,{value:void 0,writable:!1,configurable:!1})}catch{try{delete t[o]}catch{}try{e(t,o,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof t[o]=="function"&&n++}if(n&&O==="framed")try{_.post({__frame_rtc_lockdown_failed:n},"*")}catch{}})();var Ie=1e4,Ue=2e3,Q=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function ee(e){for(const t of Q)if(t.endsWith(":*"))try{const r=new URL(e);if(`${r.protocol}//${r.hostname}:*`===t)return!0}catch{}else if(e===t)return!0;return!1}var C=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),x=window.__FRAME_PREAMBLE?.transforms,F=window.__FRAME_PREAMBLE?.comments,z=window.__FRAME_PREAMBLE?.translate,H=window.__FRAME_PREAMBLE?.ldx;function L(e){return Be(()=>import("/_runtime/"+e),void 0)}function te(e,t){return{contract:e.contract,changes:new Set(e.changes??[]),flags:new Set(e.flags??[]),capabilities:e.capabilities??{},capBudgets:e.capBudgets??{},transforms:new Map,shellOrigin:t,mount:$,hooks:j,pipe:()=>({wrap:(r,n)=>(...s)=>{try{return n(...s)}catch(o){return Promise.reject(o)}}})}}var M=null,T=null;function re(e,t,r){try{Object.defineProperty(e,t,{value:r,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(e,t,{value:r,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var W=!1,j={editBefore:null,edit:null};function xe(e,t,r=!1){const n=[];let s;if(r)try{j.editBefore?.(e)}catch{}for(const o of e.elements){const i=document.querySelector(`[data-id="${o.target}"]`);if(!i){s=o.target;break}if([...Object.keys(o.attrsSet??{}),...o.attrsRemoved??[]].some(c=>!fe(c))){s=o.target;break}if(o.text!==void 0&&(!he(i)||we(i))){s=o.target;break}for(const[c,m]of Object.entries(o.attrsSet??{}))if(!oe(i,c)){try{i.setAttribute(c,m)}catch{}ne(i,c,m)}for(const c of o.attrsRemoved??[])oe(i,c)||(i.removeAttribute(c),ne(i,c,null));typeof o.text=="string"&&ve(i,o.text),n.push(o.target)}if(r)try{j.edit?.(e.seq,n,s)}catch{}if(s!==void 0){_.post({__frame_patch_miss:{seq:e.seq}},t);return}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:e.seq,targets:n}}))}catch{}}function ne(e,t,r){if(!(e instanceof HTMLInputElement))return;const n=t.toLowerCase();n==="checked"?e.checked=r!==null:n==="value"&&e.type!=="file"&&(e.value=r??"")}function oe(e,t){const r=t.toLowerCase(),n=e;return r==="data-id"||(r==="value"||r==="checked")&&(n.__artifactSecret===!0||/^(password|hidden|file)$/.test(n.type??"")||/(^|\s)(cc-|one-time-code|current-password|new-password)/i.test(`${e.getAttribute("autocomplete")??""} ${n.autocomplete??""}`))}function se(e){const t=document.documentElement;e==="light"||e==="dark"?(t.dataset.theme=e,t.style.colorScheme=e,W=!0):W&&(delete t.dataset.theme,t.style.colorScheme="",W=!1)}var N=new Map;function Fe(){let e;const t={u:new Promise(r=>{e=r}),r:r=>{t.done=!0,e(r)},done:!1,nulled:!1};return t}function K(){for(const e of N.values())e.done||(e.nulled=!0,e.r(null))}var ze=Object.freeze(Object.assign(Object.create(null),{call:Function.prototype.call,apply:Function.prototype.apply,bind:Function.prototype.bind})),$=(e,t)=>{const r=N.get(e);if(!r||r.done){r?.nulled&&T&&_.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:e}},T);return}const n=typeof t=="function"?Object.setPrototypeOf(t,ze):Object.assign(Object.create(null),t);typeof n.then=="function"&&delete n.then,r.r(Object.freeze(n))};function ae(){const e=J?.value??{};re(window,"claude",e);for(const t of Object.keys(C)){if(e[t]!==void 0){re(e,t,e[t]);continue}N.set(t,Fe())}if(e.use===void 0){const t=r=>{if(typeof r!="string"||!Object.hasOwn(C,r))return Promise.resolve(null);const n=N.get(r);return n?n.u:Promise.resolve(e[r]??null)};try{Object.defineProperty(e,"use",{value:t,writable:!0,configurable:!0,enumerable:!1})}catch{}}}if(O==="framed"){const e=x&&S.test(x)?L(x).catch(()=>{}):Promise.resolve(void 0),t=a=>{if(a.type==="auxclick"&&a.button!==1)return;const f=a.target,b=f&&f.closest?f.closest("a[href],area[href]"):null;if(!b)return;const P=b.getAttribute("href");if(!P)return;let R;try{R=new URL(P,document.baseURI)}catch{return}if((R.protocol==="http:"||R.protocol==="https:")&&R.origin!==location.origin){a.preventDefault();const k=(b.getAttribute("target")??"").toLowerCase(),g=a.type==="auxclick"||a.metaKey||a.ctrlKey||a.shiftKey||a.altKey||!["","_self","_top","_parent"].includes(k);_.post({__frame_nav:!0,url:R.href,newTab:g},"*")}};addEventListener("click",t,!0),addEventListener("auxclick",t,!0);const r={},n=a=>{a.isTrusted&&(r.pointer=!0)},s=a=>{a.isTrusted&&(r.click=!0)};addEventListener("pointermove",n,{capture:!0,passive:!0}),addEventListener("click",s,{capture:!0,passive:!0}),e.then(a=>{a?.wireNav&&(a.wireNav(),removeEventListener("click",t,!0),removeEventListener("auxclick",t,!0),removeEventListener("pointermove",n,!0),removeEventListener("click",s,!0),a.wireEngagement?.(r))});let o=null;try{o=je()}catch{}ae();let i=null,c=null,m=0;const d=_.on((a,f)=>{ee(f)&&Ae(a)&&(i=a.__frame_init,T=f,d(),clearTimeout(m),c?.())});_.post({__frame_connect:!0},"*");const v=setTimeout,p=clearTimeout;let y=0;const w=()=>{try{_.post({__frame_alive:!0},"*")}catch{}y=v(w,Ue)},h=()=>p(y);w(),addEventListener("load",h,{once:!0});const E=new Promise(a=>{c=a,m=setTimeout(()=>{d(),a()},Ie)}),A=document.readyState==="loading"?new Promise(a=>document.addEventListener("DOMContentLoaded",()=>a(),{once:!0})):Promise.resolve();A.then(()=>{try{o?.restore()}catch{}});const u={cb:null};_.on((a,f)=>{if(ee(f)&&Te(a)){try{o?.promoted()}catch{}u.cb?.()}}),E.then(async()=>{if(!i||!T){K();return}se(i.theme);const a=T;let f=!1,b=!1;_.on((l,X,B)=>{if(X!==a)return;Re(l)&&se(l.__frame_theme.theme),be(l)&&xe(l.__frame_patch,a,B);const Y=l?.__fc_mode;Y&&typeof Y=="object"&&!f&&F&&S.test(F)&&(f=!0,L(F).then(V=>V.install?.(a,Y.on===!0)).catch(()=>{}));const G=l?.__ft_cmd;G&&typeof G=="object"&&!b&&z&&S.test(z)&&(b=!0,L(z).then(V=>V.install?.(a,G)).catch(()=>{}))});const P=Object.keys(i.capabilities??{}).filter(l=>Object.hasOwn(C,l)).map(l=>[l,C[l]]).filter(l=>typeof l[1]=="string"&&S.test(l[1])),R=await Promise.allSettled(P.map(([,l])=>L(l))),k=await e,g=T;if(k?.buildBoot||_.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},g),k?.buildBoot)try{M=k.buildBoot(i,k.TRANSFORMS??{},{shellOrigin:g,mount:$,hooks:j},l=>_.post({__frame_cap_telemetry:l},g))}catch{_.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},g),M=te(i,g)}else M=te(i,g);const q=l=>_.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:l}},g),ie=M;R.forEach((l,X)=>{const B=P[X][0];if(l.status!=="fulfilled"){q(B);return}try{l.value?.install?.(ie)}catch{q(B)}}),K(),await A,h(),_.post({__frame_ready:!0},T),e.then(l=>l?.installSizeReporter?.(g,u)),ie.flags.has("frame_ldx_runtime")&&H&&S.test(H)&&document.querySelector("script#an-form")&&L(H).then(l=>l?.boot?.()).catch(()=>!1).then(l=>{l!==!0&&q("_ldx")})})}else U&&(ae(),Ne(U,Q,L,{settle:K,mount:$}))})();</script><!-- /frame-runtime -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Сабақ кестесі — Ағылшын + Математика</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Сабақ кестесі | AF Binom</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Golos+Text:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#F0F4FA;--surface:#fff;--surface2:#F7F9FC;--border:#DDE3ED;
@@ -14,134 +14,124 @@
   --accent:#1E3A6E;--tag-bg:#E8EDF5;--tag-text:#374362;
   --radius:10px;--radius-sm:6px;
   --shadow:0 1px 3px rgba(30,58,110,.08),0 4px 12px rgba(30,58,110,.06);
-
-  /* Ұстаз түстері */
-  --c-karlygash:#7C3AED;   /* күлгін */
-  --c-erfan:#0891B2;       /* көгілдір */
-  --c-a1:#059669;          /* жасыл */
-  --c-a2:#DC2626;          /* қызыл */
-  --c-farida:#DB2777;      /* қызғылт */
-  --c-aruzhan:#EA580C;     /* апельсин */
-  --c-m1:#65A30D;          /* ашық жасыл */
-  --c-adilzhan:#7C2D12;    /* қоңыр */
-  --c-tilekshi:#6D28D9;    /* ашық күлгін */
-
-  /* Топ түстері */
-  --g-2cl:#FEF9C3;--g-3cl:#DCFCE7;--g-4cl:#DBEAFE;--g-5cl:#FCE7F3;
-  --g-6cl:#FEF3C7;--g-7cl:#E0F2FE;--g-8cl:#F3E8FF;--g-9cl:#FFE4E6;
 }
-@media(prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#0F1624;--surface:#1A2235;--surface2:#1F2A3D;--border:#2D3A52;
-    --text:#E8EEFA;--text-muted:#7A8DAD;--accent:#5A8BF5;
-    --eng-bg:#172044;--eng-badge:#1D2E6A;--math-bg:#2A1C04;--math-badge:#3D2906;
-    --tag-bg:#1F2A3D;--tag-text:#A0B0CC;
-  }
-}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0F1624;--surface:#1A2235;--surface2:#1F2A3D;--border:#2D3A52;
+  --text:#E8EEFA;--text-muted:#7A8DAD;--accent:#4A72C4;
+  --eng-bg:#172044;--eng-badge:#1D2E6A;--math-bg:#2A1C04;--math-badge:#3D2906;
+  --tag-bg:#1F2A3D;--tag-text:#A0B0CC;
+}}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-text-size-adjust:100%;}
 
-/* ── HEADER ── */
-header{background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 16px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.25);min-height:56px;}
-.logo{font-family:'Golos Text',sans-serif;font-size:1rem;font-weight:700;line-height:1.2;}
-.logo span{display:block;opacity:.65;font-weight:400;font-size:.72rem;margin-top:1px;}
-.view-toggle{display:none;gap:4px;align-items:center;flex-shrink:0;margin-left:10px;}
-.vtbtn{background:transparent;border:1px solid rgba(255,255,255,.4);color:rgba(255,255,255,.8);border-radius:6px;padding:5px 9px;font-size:.72rem;cursor:pointer;font-family:inherit;white-space:nowrap;}
+/* HEADER */
+header{background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 14px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.25);min-height:54px;gap:8px;}
+.logo{font-family:'Golos Text',sans-serif;font-size:.95rem;font-weight:700;line-height:1.2;flex:1;min-width:0;}
+.logo span{display:block;opacity:.6;font-weight:400;font-size:.68rem;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.header-right{display:flex;align-items:center;gap:6px;flex-shrink:0;}
+.view-toggle{display:none;gap:4px;}
+.vtbtn{background:transparent;border:1px solid rgba(255,255,255,.4);color:rgba(255,255,255,.8);border-radius:6px;padding:4px 8px;font-size:.7rem;cursor:pointer;font-family:inherit;}
 .vtbtn.active{background:rgba(255,255,255,.2);color:#fff;border-color:rgba(255,255,255,.7);}
+/* Language switcher */
+.lang-sw{display:flex;background:rgba(255,255,255,.12);border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,.25);}
+.lang-btn{background:transparent;border:none;color:rgba(255,255,255,.75);padding:5px 8px;font-size:.7rem;font-weight:600;cursor:pointer;font-family:inherit;transition:.15s;}
+.lang-btn.active{background:rgba(255,255,255,.25);color:#fff;}
 
-/* ── FILTERS ── */
-.filters-wrap{background:var(--surface);border-bottom:1px solid var(--border);padding:12px 14px;}
-.filters-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:1400px;margin:0 auto;}
-.fgroup{display:flex;flex-direction:column;gap:3px;}
-.fgroup label{font-size:.68rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.3px;}
-select{border:1px solid var(--border);background:var(--surface2);color:var(--text);border-radius:var(--radius-sm);padding:8px 28px 8px 10px;font-size:.84rem;font-family:inherit;cursor:pointer;width:100%;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7A96' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;}
+/* FILTERS */
+.filters-wrap{background:var(--surface);border-bottom:1px solid var(--border);padding:10px 14px;}
+.filters-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;max-width:1400px;margin:0 auto;}
+.fgroup{display:flex;flex-direction:column;gap:2px;}
+.fgroup label{font-size:.65rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.3px;}
+select{border:1px solid var(--border);background:var(--surface2);color:var(--text);border-radius:var(--radius-sm);padding:7px 26px 7px 9px;font-size:.82rem;font-family:inherit;cursor:pointer;width:100%;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%236B7A96' stroke-width='2.5'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 9px center;}
 select:focus{outline:none;border-color:var(--accent);}
-.filter-actions{grid-column:1/-1;display:flex;gap:8px;margin-top:2px;}
-.clear-btn{background:var(--accent);color:#fff;border:none;border-radius:var(--radius-sm);font-weight:600;padding:9px 0;font-family:inherit;font-size:.84rem;cursor:pointer;flex:1;}
+.filter-actions{grid-column:1/-1;}
+.clear-btn{background:var(--accent);color:#fff;border:none;border-radius:var(--radius-sm);font-weight:600;padding:8px 0;font-family:inherit;font-size:.82rem;cursor:pointer;width:100%;}
 
-/* ── LEGEND ── */
-.legend-wrap{max-width:1400px;margin:10px auto 0;padding:0 14px;}
-.legend-tabs{display:flex;gap:6px;margin-bottom:8px;}
-.ltab{padding:4px 12px;border-radius:20px;font-size:.73rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);}
-.ltab.active{background:var(--accent);color:#fff;border-color:var(--accent);}
-.legend-grid{display:flex;flex-wrap:wrap;gap:6px;}
-.leg-item{display:flex;align-items:center;gap:5px;font-size:.73rem;font-weight:500;color:var(--text);}
-.leg-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
-.leg-rect{width:18px;height:12px;border-radius:3px;flex-shrink:0;}
+/* INFO BANNER */
+.info-banner{max-width:1400px;margin:10px auto 0;padding:0 14px;}
+.info-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;display:flex;flex-direction:column;gap:6px;}
+.info-row{display:flex;align-items:center;gap:8px;font-size:.78rem;}
+.floor-badge{background:var(--accent);color:#fff;border-radius:4px;padding:1px 7px;font-size:.68rem;font-weight:700;white-space:nowrap;}
+.info-rooms{color:var(--text-muted);font-size:.75rem;}
 
-/* ── STATS ── */
-.stats-bar{max-width:1400px;margin:8px auto 0;padding:0 14px;display:flex;gap:6px;flex-wrap:wrap;}
-.stat-pill{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:3px 11px;font-size:.76rem;color:var(--text-muted);}
+
+
+/* STATS */
+.stats-bar{max-width:1400px;margin:7px auto 0;padding:0 14px;display:flex;gap:5px;flex-wrap:wrap;}
+.stat-pill{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:2px 10px;font-size:.73rem;color:var(--text-muted);}
 .stat-pill b{color:var(--text);}
 
-/* ── TABLE ── */
-.table-wrap{max-width:1400px;margin:12px auto 70px;padding:0 14px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
-table{width:100%;border-collapse:collapse;background:var(--surface);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);min-width:520px;}
-thead{background:var(--accent);}
-thead th{color:#fff;font-size:.73rem;font-weight:600;text-align:left;padding:10px;white-space:nowrap;}
-tbody tr{border-bottom:1px solid var(--border);}
-tbody tr:last-child{border-bottom:none;}
-td{padding:7px 10px;font-size:.8rem;vertical-align:middle;}
-.tutor-dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;flex-shrink:0;}
-
-/* ── CARDS ── */
-.cards-grid{max-width:1400px;margin:12px auto 70px;padding:0 14px;display:grid;grid-template-columns:1fr;gap:10px;}
-.card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);padding:13px 14px;display:flex;flex-direction:column;gap:8px;}
-.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
-.card-group{font-family:'Golos Text',sans-serif;font-size:.95rem;font-weight:700;display:flex;align-items:center;gap:6px;}
-.card-subj{font-size:.8rem;font-weight:600;white-space:nowrap;padding-top:2px;}
-.card-subj.eng{color:var(--eng);}.card-subj.math{color:var(--math);}
-.card-meta{display:flex;flex-wrap:wrap;gap:5px;}
-.tag{background:var(--tag-bg);color:var(--tag-text);border-radius:4px;padding:3px 8px;font-size:.73rem;font-weight:500;}
-.badge{display:inline-block;border-radius:4px;padding:2px 7px;font-size:.72rem;font-weight:600;white-space:nowrap;}
+/* BADGE */
+.badge{display:inline-block;border-radius:4px;padding:2px 7px;font-size:.7rem;font-weight:600;white-space:nowrap;}
 .badge-eng{background:var(--eng-badge);color:var(--eng);}
 .badge-math{background:var(--math-badge);color:var(--math);}
 .badge-s1{background:#E0F2FE;color:#0369A1;}
 .badge-s2{background:#FEF9C3;color:#854D0E;}
+.tutor-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;flex-shrink:0;}
 
-/* ── WEEK MOBILE ── */
-.week-grid{max-width:1400px;margin:12px auto 70px;padding:0 14px;}
-.week-day-card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:10px;overflow:hidden;}
-.week-day-hdr{background:var(--accent);color:#fff;padding:8px 14px;font-size:.85rem;font-weight:700;}
-.week-shift-label{padding:5px 14px;font-size:.71rem;font-weight:600;color:var(--text-muted);background:var(--surface2);border-bottom:1px solid var(--border);}
+/* TABLE */
+.table-wrap{max-width:1400px;margin:10px auto 70px;padding:0 14px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;background:var(--surface);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);min-width:500px;}
+thead{background:var(--accent);}
+thead th{color:#fff;font-size:.71rem;font-weight:600;text-align:left;padding:9px 9px;white-space:nowrap;}
+tbody tr{border-bottom:1px solid var(--border);}
+tbody tr:last-child{border-bottom:none;}
+td{padding:6px 9px;font-size:.78rem;vertical-align:middle;}
+
+/* CARDS */
+.cards-grid{max-width:1400px;margin:10px auto 70px;padding:0 14px;display:grid;grid-template-columns:1fr;gap:8px;}
+.card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);padding:11px 13px;display:flex;flex-direction:column;gap:7px;}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;}
+.card-group{font-family:'Golos Text',sans-serif;font-size:.9rem;font-weight:700;}
+.card-subj{font-size:.77rem;font-weight:600;white-space:nowrap;padding-top:2px;}
+.card-subj.eng{color:var(--eng);}.card-subj.math{color:var(--math);}
+.card-meta{display:flex;flex-wrap:wrap;gap:4px;}
+.tag{background:var(--tag-bg);color:var(--tag-text);border-radius:4px;padding:2px 7px;font-size:.71rem;font-weight:500;}
+
+/* WEEK */
+.week-grid{max-width:1400px;margin:10px auto 70px;padding:0 14px;}
+.week-day-card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:9px;overflow:hidden;}
+.week-day-hdr{background:var(--accent);color:#fff;padding:7px 13px;font-size:.82rem;font-weight:700;}
+.week-shift-label{padding:4px 13px;font-size:.68rem;font-weight:600;color:var(--text-muted);background:var(--surface2);border-bottom:1px solid var(--border);}
 .week-slot-row{display:flex;border-bottom:1px solid var(--border);}
 .week-slot-row:last-child{border-bottom:none;}
-.week-time{min-width:80px;padding:7px 8px;background:var(--surface2);font-size:.69rem;font-weight:600;color:var(--text-muted);display:flex;align-items:flex-start;border-right:1px solid var(--border);white-space:nowrap;}
-.week-items{flex:1;padding:5px 8px;display:flex;flex-direction:column;gap:4px;}
-.slot-item{border-radius:5px;padding:5px 8px;font-size:.75rem;line-height:1.4;}
-.si-eng{background:var(--eng-bg);border-left:3px solid var(--eng);}
-.si-math{background:var(--math-bg);border-left:3px solid var(--math);}
-.si-grp{font-weight:700;display:flex;align-items:center;gap:5px;}
-.si-info{color:var(--text-muted);font-size:.69rem;margin-top:1px;display:flex;align-items:center;gap:4px;}
+.week-time{min-width:78px;padding:6px 7px;background:var(--surface2);font-size:.66rem;font-weight:600;color:var(--text-muted);display:flex;align-items:flex-start;border-right:1px solid var(--border);white-space:nowrap;}
+.week-items{flex:1;padding:4px 7px;display:flex;flex-direction:column;gap:3px;}
+.slot-item{border-radius:5px;padding:4px 7px;font-size:.73rem;line-height:1.4;}
+.si-eng{background:var(--eng-bg);}
+.si-math{background:var(--math-bg);}
+.si-grp{font-weight:700;font-size:.73rem;}
+.si-info{color:var(--text-muted);font-size:.67rem;margin-top:1px;display:flex;align-items:center;gap:3px;}
 .wg-table{display:none;}
 
-/* ── EMPTY ── */
-.empty{text-align:center;padding:48px 20px;color:var(--text-muted);font-size:.9rem;}
-.empty svg{display:block;margin:0 auto 12px;opacity:.3;}
+/* EMPTY */
+.empty{text-align:center;padding:44px 20px;color:var(--text-muted);font-size:.88rem;}
+.empty svg{display:block;margin:0 auto 11px;opacity:.3;}
 
-/* ── BOTTOM NAV ── */
+/* BOTTOM NAV */
 .bottom-nav{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);box-shadow:0 -2px 10px rgba(30,58,110,.08);z-index:99;}
-.bnav-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:7px 4px 9px;font-size:.64rem;font-weight:600;color:var(--text-muted);background:transparent;border:none;cursor:pointer;font-family:inherit;gap:3px;}
-.bnav-btn svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.8;}
+.bnav-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 2px 8px;font-size:.6rem;font-weight:600;color:var(--text-muted);background:transparent;border:none;cursor:pointer;font-family:inherit;gap:2px;}
+.bnav-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;}
 .bnav-btn.active{color:var(--accent);}
 
-/* ── DESKTOP ── */
+/* DESKTOP */
 @media(min-width:768px){
-  header{min-height:64px;padding:0 24px;}
-  .logo{font-size:1.1rem;}.logo span{display:inline;font-size:.9rem;margin-top:0;margin-left:6px;}
+  header{min-height:62px;padding:0 24px;}
+  .logo{font-size:1.05rem;}.logo span{display:inline;font-size:.85rem;margin-top:0;margin-left:8px;}
   .view-toggle{display:flex;}
   .bottom-nav{display:none;}
   .filters-grid{grid-template-columns:repeat(3,1fr);}
   .filter-actions{grid-column:auto;}
-  .filters-wrap,.table-wrap,.cards-grid,.week-grid,.stats-bar,.legend-wrap{padding-left:24px;padding-right:24px;}
-  .cards-grid{grid-template-columns:repeat(auto-fill,minmax(290px,1fr));margin-bottom:40px;}
+  .filters-wrap,.table-wrap,.cards-grid,.week-grid,.stats-bar,.legend-wrap,.info-banner{padding-left:24px;padding-right:24px;}
+  .cards-grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));margin-bottom:40px;}
   .table-wrap,.week-grid{margin-bottom:40px;}
   .week-day-card{display:none;}
   .wg-table{display:table;width:100%;border-collapse:collapse;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;}
-  .wg-table th{background:var(--accent);color:#fff;padding:10px 10px;font-size:.78rem;font-weight:600;white-space:nowrap;min-width:120px;}
-  .wg-table .slot-label{background:var(--surface2);color:var(--text-muted);font-size:.73rem;font-weight:600;padding:7px 10px;white-space:nowrap;border-right:1px solid var(--border);}
-  .wg-table td{border:1px solid var(--border);padding:4px 6px;vertical-align:top;}
+  .wg-table th{background:var(--accent);color:#fff;padding:9px 9px;font-size:.76rem;font-weight:600;white-space:nowrap;min-width:110px;}
+  .wg-table .slot-label{background:var(--surface2);color:var(--text-muted);font-size:.71rem;font-weight:600;padding:6px 9px;white-space:nowrap;border-right:1px solid var(--border);}
+  .wg-table td{border:1px solid var(--border);padding:4px 5px;vertical-align:top;}
   .slot-cell{display:flex;flex-direction:column;gap:3px;}
+  .info-card{gap:10px 24px;}
 }
 @media(min-width:1024px){.filters-grid{grid-template-columns:repeat(6,1fr);}}
 </style>
@@ -149,253 +139,374 @@ td{padding:7px 10px;font-size:.8rem;vertical-align:middle;}
 <body>
 
 <header>
-  <div class="logo">Сабақ кестесі <span>Ағылшын · Математика · 2026–2027</span></div>
-  <div class="view-toggle">
-    <button class="vtbtn active" onclick="setView('table')" id="v-table">Тізім</button>
-    <button class="vtbtn" onclick="setView('cards')" id="v-cards">Карточки</button>
-    <button class="vtbtn" onclick="setView('week')" id="v-week">Апта</button>
+  <div class="logo"><span id="h-logo-sub">Ағылшын · Математика · 2026–2027</span>
+    <span id="h-title" style="font-size:1rem;font-weight:700;font-family:'Golos Text',sans-serif;">Сабақ кестесі</span>
+  </div>
+  <div class="header-right">
+    <div class="view-toggle">
+      <button class="vtbtn active" onclick="setView('table')" id="v-table" data-t="nav-list">Тізім</button>
+      <button class="vtbtn" onclick="setView('cards')" id="v-cards" data-t="nav-cards">Карточки</button>
+      <button class="vtbtn" onclick="setView('week')" id="v-week" data-t="nav-week">Апта</button>
+    </div>
+    <div class="lang-sw">
+      <button class="lang-btn active" onclick="setLang('kk')">ҚАЗ</button>
+      <button class="lang-btn" onclick="setLang('ru')">РУС</button>
+      <button class="lang-btn" onclick="setLang('en')">ENG</button>
+    </div>
   </div>
 </header>
 
 <div class="filters-wrap">
   <div class="filters-grid">
-    <div class="fgroup"><label>Ауысым</label>
+    <div class="fgroup"><label data-t="l-shift">Ауысым</label>
       <select id="f-shift" onchange="applyFilters()">
-        <option value="">Барлығы</option>
-        <option value="1-ауысым">1-ауысым</option>
-        <option value="2-ауысым">2-ауысым</option>
+        <option value="" data-t="all">Барлығы</option>
+        <option value="1" data-t="s1">1-ауысым</option>
+        <option value="2" data-t="s2">2-ауысым</option>
       </select></div>
-    <div class="fgroup"><label>Күн</label>
+    <div class="fgroup"><label data-t="l-day">Күн</label>
       <select id="f-day" onchange="applyFilters()">
-        <option value="">Барлығы</option>
-        <option>Дүйсенбі</option><option>Сейсенбі</option>
-        <option>Сәрсенбі</option><option>Бейсенбі</option><option>Жұма</option>
+        <option value="" data-t="all">Барлығы</option>
+        <option value="0" data-t="d0">Дүйсенбі</option>
+        <option value="1" data-t="d1">Сейсенбі</option>
+        <option value="2" data-t="d2">Сәрсенбі</option>
+        <option value="3" data-t="d3">Бейсенбі</option>
+        <option value="4" data-t="d4">Жұма</option>
       </select></div>
-    <div class="fgroup"><label>Пән</label>
+    <div class="fgroup"><label data-t="l-subj">Пән</label>
       <select id="f-subj" onchange="applyFilters()">
-        <option value="">Барлығы</option>
-        <option>Ағылшын</option><option>Математика</option>
+        <option value="" data-t="all">Барлығы</option>
+        <option value="E" data-t="eng">Ағылшын</option>
+        <option value="M" data-t="math">Математика</option>
       </select></div>
-    <div class="fgroup"><label>Ұстаз</label>
+    <div class="fgroup"><label data-t="l-tutor">Ұстаз</label>
       <select id="f-tutor" onchange="applyFilters()">
-        <option value="">Барлығы</option>
+        <option value="" data-t="all">Барлығы</option>
         <option>Қарлығаш</option><option>Эрфан</option>
         <option>Ағылшын ұстаз1</option><option>Ағылшын ұстаз2</option><option>Фарида</option>
         <option>Аружан</option><option>Матем.ұстаз1</option><option>Әділжан</option><option>Тілекші</option>
       </select></div>
-    <div class="fgroup"><label>Кабинет</label>
+    <div class="fgroup"><label data-t="l-room">Кабинет</label>
       <select id="f-room" onchange="applyFilters()">
-        <option value="">Барлығы</option>
+        <option value="" data-t="all">Барлығы</option>
         <option>Конференц зал</option><option>Таным</option><option>203</option>
         <option>201</option><option>202</option><option>211</option><option>212</option>
       </select></div>
-    <div class="fgroup"><label>Топ</label>
-      <select id="f-group" onchange="applyFilters()"><option value="">Барлығы</option></select></div>
+    <div class="fgroup"><label data-t="l-group">Топ</label>
+      <select id="f-group" onchange="applyFilters()"><option value="" data-t="all">Барлығы</option></select></div>
     <div class="filter-actions">
-      <button class="clear-btn" onclick="clearFilters()">Фильтрді тазалау</button>
+      <button class="clear-btn" onclick="clearFilters()" data-t="btn-clear">Фильтрді тазалау</button>
     </div>
   </div>
 </div>
 
-<!-- Legend -->
-<div class="legend-wrap">
-  <div class="legend-tabs">
-    <button class="ltab active" onclick="showLegend('tutor')">Ұстаз бойынша</button>
-    <button class="ltab" onclick="showLegend('group')">Сынып бойынша</button>
+<!-- Info Banner -->
+<div class="info-banner">
+  <div class="info-card" id="info-card">
+    <div class="info-row"><span class="floor-badge" style="background:#1D6F42" data-t="floor2">2-қабат</span><span class="info-rooms">201, 202, 203, 211, 212</span></div>
+    <div class="info-row"><span class="floor-badge" style="background:#9333EA" data-t="floor3">3-қабат</span><span class="info-rooms">Конференц зал</span></div>
+    <div class="info-row"><span class="floor-badge" style="background:#C2410C" data-t="floor4">4-қабат</span><span class="info-rooms">Таным</span></div>
   </div>
-  <div class="legend-grid" id="legend-content"></div>
 </div>
+
 
 <div class="stats-bar" id="stats-bar"></div>
 
 <div class="table-wrap" id="view-table">
   <table><thead><tr>
-    <th>Күн</th><th>Ауысым</th><th>Уақыт</th><th>Кабинет</th><th>Ұстаз</th><th>Пән</th><th>Топ</th>
+    <th data-t="col-day">Күн</th><th data-t="col-shift">Ауысым</th><th data-t="col-time">Уақыт</th>
+    <th data-t="col-room">Кабинет</th><th data-t="col-tutor">Ұстаз</th>
+    <th data-t="col-subj">Пән</th><th data-t="col-group">Топ</th>
   </tr></thead><tbody id="tbl-body"></tbody></table>
   <div class="empty" id="tbl-empty" style="display:none">
-    <svg width="40" height="40" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Сабақ табылмады</div>
+    <svg width="38" height="38" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <span data-t="no-data">Сабақ табылмады</span></div>
 </div>
 <div class="cards-grid" id="view-cards" style="display:none"></div>
 <div class="week-grid" id="view-week" style="display:none"></div>
 
 <nav class="bottom-nav">
   <button class="bnav-btn active" id="bn-table" onclick="setView('table')">
-    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>Тізім</button>
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+    <span data-t="nav-list">Тізім</span></button>
   <button class="bnav-btn" id="bn-cards" onclick="setView('cards')">
-    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>Карточки</button>
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>
+    <span data-t="nav-cards">Карточки</span></button>
   <button class="bnav-btn" id="bn-week" onclick="setView('week')">
-    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Апта</button>
+    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+    <span data-t="nav-week">Апта</span></button>
 </nav>
 
 <script>
-// ─── Деректер ───
-const E='Ағылшын', M='Математика';
-const KZ='Конференц зал', TN='Таным', R203='203';
-
-// Ұстаз конфиг
-const TUTORS = {
-  'Қарлығаш':      {color:'#7C3AED', bg:'#EDE9FE', key:'karlygash'},
-  'Эрфан':         {color:'#0891B2', bg:'#CFFAFE', key:'erfan'},
-  'Ағылшын ұстаз1':{color:'#059669', bg:'#D1FAE5', key:'a1'},
-  'Ағылшын ұстаз2':{color:'#DC2626', bg:'#FEE2E2', key:'a2'},
-  'Фарида':        {color:'#DB2777', bg:'#FCE7F3', key:'farida'},
-  'Аружан':        {color:'#EA580C', bg:'#FFEDD5', key:'aruzhan'},
-  'Матем.ұстаз1':  {color:'#65A30D', bg:'#ECFCCB', key:'m1'},
-  'Әділжан':       {color:'#7C2D12', bg:'#FED7AA', key:'adilzhan'},
-  'Тілекші':       {color:'#6D28D9', bg:'#EDE9FE', key:'tilekshi'},
+// ═══════════════════════════════
+// TRANSLATIONS
+// ═══════════════════════════════
+const TR = {
+  kk:{
+    'h-title':'Сабақ кестесі | AF Binom','h-sub':'Ағылшын · Математика · 2026–2027',
+    'l-shift':'Ауысым','l-day':'Күн','l-subj':'Пән','l-tutor':'Ұстаз','l-room':'Кабинет','l-group':'Топ',
+    'all':'Барлығы','s1':'1-ауысым','s2':'2-ауысым',
+    'd0':'Дүйсенбі','d1':'Сейсенбі','d2':'Сәрсенбі','d3':'Бейсенбі','d4':'Жұма',
+    'eng':'Ағылшын','math':'Математика',
+    'btn-clear':'Фильтрді тазалау',
+    'floor2':'2-қабат','floor3':'3-қабат','floor4':'4-қабат',
+    'leg-tutor':'Ұстаз бойынша','leg-group':'Сынып бойынша',
+    'col-day':'Күн','col-shift':'Ауысым','col-time':'Уақыт','col-room':'Кабинет','col-tutor':'Ұстаз','col-subj':'Пән','col-group':'Топ',
+    'no-data':'Сабақ табылмады',
+    'nav-list':'Тізім','nav-cards':'Карточки','nav-week':'Апта',
+    'stat-all':'Барлық:','stat-eng':'Ағылшын:','stat-math':'Математика:','stat-tutors':'Ұстаздар:',
+    'shift1':'1-ауысым','shift2':'2-ауысым',
+    'subj-e':'Ағылшын','subj-m':'Математика',
+    'days':['Дүйсенбі','Сейсенбі','Сәрсенбі','Бейсенбі','Жұма'],
+    'grade-suffix':'-сынып','top-suffix':'-топ',
+    'lbl-s1':'🌅 1-АУЫСЫМ','lbl-s2':'🌆 2-АУЫСЫМ',
+  },
+  ru:{
+    'h-title':'Расписание | AF Binom','h-sub':'Английский · Математика · 2026–2027',
+    'l-shift':'Смена','l-day':'День','l-subj':'Предмет','l-tutor':'Учитель','l-room':'Кабинет','l-group':'Группа',
+    'all':'Все','s1':'1-я смена','s2':'2-я смена',
+    'd0':'Понедельник','d1':'Вторник','d2':'Среда','d3':'Четверг','d4':'Пятница',
+    'eng':'Английский','math':'Математика',
+    'btn-clear':'Сбросить фильтры',
+    'floor2':'2-й этаж','floor3':'3-й этаж','floor4':'4-й этаж',
+    'leg-tutor':'По учителю','leg-group':'По классу',
+    'col-day':'День','col-shift':'Смена','col-time':'Время','col-room':'Кабинет','col-tutor':'Учитель','col-subj':'Предмет','col-group':'Группа',
+    'no-data':'Занятия не найдены',
+    'nav-list':'Список','nav-cards':'Карточки','nav-week':'Неделя',
+    'stat-all':'Всего:','stat-eng':'Английский:','stat-math':'Математика:','stat-tutors':'Учителя:',
+    'shift1':'1-я смена','shift2':'2-я смена',
+    'subj-e':'Английский','subj-m':'Математика',
+    'days':['Понедельник','Вторник','Среда','Четверг','Пятница'],
+    'grade-suffix':'-й класс','top-suffix':'-я гр.',
+    'lbl-s1':'🌅 1-я СМЕНА','lbl-s2':'🌆 2-я СМЕНА',
+  },
+  en:{
+    'h-title':'Schedule | AF Binom','h-sub':'English · Mathematics · 2026–2027',
+    'l-shift':'Shift','l-day':'Day','l-subj':'Subject','l-tutor':'Teacher','l-room':'Room','l-group':'Group',
+    'all':'All','s1':'Shift 1','s2':'Shift 2',
+    'd0':'Monday','d1':'Tuesday','d2':'Wednesday','d3':'Thursday','d4':'Friday',
+    'eng':'English','math':'Mathematics',
+    'btn-clear':'Clear filters',
+    'floor2':'2nd floor','floor3':'3rd floor','floor4':'4th floor',
+    'leg-tutor':'By teacher','leg-group':'By grade',
+    'col-day':'Day','col-shift':'Shift','col-time':'Time','col-room':'Room','col-tutor':'Teacher','col-subj':'Subject','col-group':'Group',
+    'no-data':'No classes found',
+    'nav-list':'List','nav-cards':'Cards','nav-week':'Week',
+    'stat-all':'Total:','stat-eng':'English:','stat-math':'Math:','stat-tutors':'Teachers:',
+    'shift1':'Shift 1','shift2':'Shift 2',
+    'subj-e':'English','subj-m':'Mathematics',
+    'days':['Monday','Tuesday','Wednesday','Thursday','Friday'],
+    'grade-suffix':'th grade','top-suffix':'',
+    'lbl-s1':'🌅 SHIFT 1','lbl-s2':'🌆 SHIFT 2',
+  }
 };
 
-// Сынып түстері
-const CLASS_COLORS = {
-  '2':{ bg:'#FEF9C3', border:'#EAB308'},
-  '3':{ bg:'#DCFCE7', border:'#16A34A'},
-  '4':{ bg:'#DBEAFE', border:'#2563EB'},
-  '5':{ bg:'#FCE7F3', border:'#DB2777'},
-  '6':{ bg:'#FEF3C7', border:'#D97706'},
-  '7':{ bg:'#E0F2FE', border:'#0284C7'},
-  '8':{ bg:'#F3E8FF', border:'#9333EA'},
-  '9':{ bg:'#FFE4E6', border:'#E11D48'},
-};
-function gradeOf(g){ return g.match(/^(\d+)/)?.[1]||'0'; }
-function groupColor(g){ const c=CLASS_COLORS[gradeOf(g)]; return c||{bg:'#F1F5F9',border:'#94A3B8'}; }
+let LANG = 'kk';
+const LANGS = ['kk','ru','en'];
+const LANG_LABELS = {kk:'ҚАЗ', ru:'РУС', en:'ENG'};
 
-function L(d,s,t,sub,g,rm){
-  return{day:d,slot:s,tutor:t,subject:sub,group:g,room:rm,
-    shift:s.startsWith('S')?'1-ауысым':'2-ауысым',time:TIME[s]};
+function t(k){ return TR[LANG][k]||k; }
+
+function applyTranslations(){
+  const L=LANG;
+  // Static labeled elements
+  [['h-title','h-title'],['h-logo-sub','h-sub']].forEach(([id,k])=>{
+    const el=document.getElementById(id);if(el)el.textContent=TR[L][k]||'';
+  });
+  // All data-t elements (labels, buttons, th, spans, options)
+  document.querySelectorAll('[data-t]').forEach(el=>{
+    const v=TR[L][el.getAttribute('data-t')];
+    if(v!==undefined&&typeof v==='string')el.textContent=v;
+  });
+  // Rebuild select option texts separately (querySelectorAll covers them via data-t too)
+  // Active lang btn
+  document.querySelectorAll('.lang-btn').forEach((b,i)=>b.classList.toggle('active',LANGS[i]===L));
 }
 
-const S1=[['S1','10:45–11:25'],['S2','11:30–12:10'],['S3','12:15–12:55'],['S4','13:00–13:40']];
-const S2=[['T1','14:00–14:40'],['T2','14:45–15:25'],['T3','15:30–16:10'],['T4','16:15–16:55']];
-const TIME=Object.fromEntries([...S1,...S2]);
-const DAYS=['Дүйсенбі','Сейсенбі','Сәрсенбі','Бейсенбі','Жұма'];
-const SLOTS=[...S1,...S2].map(x=>x[0]);
+function setLang(l){
+  LANG=l;
+  applyTranslations();
+  applyFilters();
+}
+
+
+// ═══════════════════════════════
+// DATA
+// ═══════════════════════════════
+const TUTORS={
+  'Қарлығаш':    {color:'#7C3AED',bg:'#EDE9FE'},
+  'Эрфан':       {color:'#0891B2',bg:'#CFFAFE'},
+  'Ағылшын ұстаз1':{color:'#059669',bg:'#D1FAE5'},
+  'Ағылшын ұстаз2':{color:'#DC2626',bg:'#FEE2E2'},
+  'Фарида':      {color:'#DB2777',bg:'#FCE7F3'},
+  'Аружан':      {color:'#EA580C',bg:'#FFEDD5'},
+  'Матем.ұстаз1':{color:'#65A30D',bg:'#ECFCCB'},
+  'Әділжан':     {color:'#7C2D12',bg:'#FED7AA'},
+  'Тілекші':     {color:'#6D28D9',bg:'#EDE9FE'},
+};
+const CLASS_COLORS={
+  '2':{bg:'#FEF9C3',border:'#EAB308'},'3':{bg:'#DCFCE7',border:'#16A34A'},
+  '4':{bg:'#DBEAFE',border:'#2563EB'},'5':{bg:'#FCE7F3',border:'#DB2777'},
+  '6':{bg:'#FEF3C7',border:'#D97706'},'7':{bg:'#E0F2FE',border:'#0284C7'},
+  '8':{bg:'#F3E8FF',border:'#9333EA'},'9':{bg:'#FFE4E6',border:'#E11D48'},
+};
+function gradeOf(g){return(g.match(/^(\d+)/)||['','0'])[1];}
+function groupColor(g){return CLASS_COLORS[gradeOf(g)]||{bg:'#F1F5F9',border:'#94A3B8'};}
+
+// Slot times — Фарида 14:30-дан
+const TIME={
+  S1:'10:45–11:25',S2:'11:30–12:10',S3:'12:15–12:55',S4:'13:00–13:40',
+  T1:'14:00–14:40',T2:'14:45–15:25',T3:'15:30–16:10',T4:'16:15–16:55',
+  F1:'14:30–15:10',F2:'15:15–15:55',F3:'16:00–16:40',
+};
+const DAYS_KK=['Дүйсенбі','Сейсенбі','Сәрсенбі','Бейсенбі','Жұма'];
+const SLOTS=['S1','S2','S3','S4','T1','T2','T3','T4','F1','F2','F3'];
 const SORDER=Object.fromEntries(SLOTS.map((s,i)=>[s,i]));
-const DORD={Дүйсенбі:0,Сейсенбі:1,Сәрсенбі:2,Бейсенбі:3,Жұма:4};
 
 const K='Қарлығаш',ER='Эрфан',A1='Ағылшын ұстаз1',A2='Ағылшын ұстаз2',F='Фарида';
-const AR='Аружан',M1='Матем.ұстаз1',AD='Әділжан',T='Тілекші';
+const AR='Аружан',M1='Матем.ұстаз1',AD='Әділжан',TL='Тілекші';
+const SE='E',SM='M';
+const KZ='Конференц зал',TN='Таным',R203='203';
+
+function L(d,s,tu,sub,g,rm){
+  return{dayIdx:d,slot:s,tutor:tu,subject:sub,group:g,room:rm,
+    shift:s.startsWith('S')?'1':'2',time:TIME[s]};
+}
 
 const ALL=[
-  // ── 1-ауысым: Қарлығаш (КЗ) ──
-  ...['Дүйсенбі','Сәрсенбі','Жұма'].flatMap(d=>[
-    L(d,'S1',K,E,'2-сынып 1-топ',KZ), L(d,'S2',K,E,'2-сынып 2-топ',KZ)]),
-  ...['Дүйсенбі','Сәрсенбі','Бейсенбі'].flatMap(d=>[
-    L(d,'S3',K,E,'3-сынып 1-топ',KZ), L(d,'S4',K,E,'3-сынып 2-топ',KZ)]),
-  ...['Сейсенбі','Бейсенбі'].flatMap(d=>[
-    L(d,'S1',K,E,'4-сынып 1-топ (орыс)',KZ), L(d,'S2',K,E,'5-сынып 1-топ (орыс)',KZ)]),
-  L('Жұма','S3',K,E,'4-сынып 1-топ (орыс)',KZ),
-  L('Жұма','S4',K,E,'5-сынып 1-топ (орыс)',KZ),
+  // ── Қарлығаш (КЗ) ──
+  ...[0,2,4].flatMap(d=>[L(d,'S1',K,SE,'2-сынып 1-топ',KZ),L(d,'S2',K,SE,'2-сынып 2-топ',KZ)]),
+  ...[0,2,3].flatMap(d=>[L(d,'S3',K,SE,'3-сынып 1-топ',KZ),L(d,'S4',K,SE,'3-сынып 2-топ',KZ)]),
+  ...[1,3].flatMap(d=>[L(d,'S1',K,SE,'4-сынып 1-топ (орыс)',KZ),L(d,'S2',K,SE,'5-сынып 1-топ (орыс)',KZ)]),
+  L(4,'S3',K,SE,'4-сынып 1-топ (орыс)',KZ), L(4,'S4',K,SE,'5-сынып 1-топ (орыс)',KZ),
 
-  // ── 1-ауысым: Аружан (Таным) ──
-  ...['Дүйсенбі','Сәрсенбі'].flatMap(d=>[
-    L(d,'S1',AR,M,'2-сынып 2-топ',TN), L(d,'S2',AR,M,'2-сынып 1-топ',TN)]),
-  ...['Дүйсенбі','Бейсенбі'].flatMap(d=>[
-    L(d,'S3',AR,M,'3-сынып 2-топ',TN), L(d,'S4',AR,M,'3-сынып 1-топ',TN)]),
-  ...['Сейсенбі','Бейсенбі'].flatMap(d=>[
-    L(d,'S1',AR,M,'5-сынып 1-топ (орыс)',TN), L(d,'S2',AR,M,'4-сынып 1-топ (орыс)',TN)]),
+  // ── Аружан (Таным, 1-ауысым) ──
+  ...[0,2].flatMap(d=>[L(d,'S1',AR,SM,'2-сынып 2-топ',TN),L(d,'S2',AR,SM,'2-сынып 1-топ',TN)]),
+  ...[0,3].flatMap(d=>[L(d,'S3',AR,SM,'3-сынып 2-топ',TN),L(d,'S4',AR,SM,'3-сынып 1-топ',TN)]),
+  ...[1,3].flatMap(d=>[L(d,'S1',AR,SM,'5-сынып 1-топ (орыс)',TN),L(d,'S2',AR,SM,'4-сынып 1-топ (орыс)',TN)]),
 
-  // ── 1-ауысым: Эрфан (203) ──
-  ...['Дүйсенбі','Сәрсенбі','Жұма'].flatMap(d=>[
-    L(d,'S3',ER,E,'6-сынып 1-топ (орыс)',R203), L(d,'S4',ER,E,'6-сынып 2-топ',R203)]),
-  ...['Сейсенбі','Бейсенбі'].flatMap(d=>[
-    L(d,'S3',ER,E,'6-сынып 3-топ',R203), L(d,'S4',ER,E,'6-сынып 4-топ',R203)]),
-  L('Жұма','S1',ER,E,'6-сынып 3-топ',R203), L('Жұма','S2',ER,E,'6-сынып 4-топ',R203),
+  // ── Эрфан (203) ──
+  ...[0,2,4].flatMap(d=>[L(d,'S3',ER,SE,'6-сынып 1-топ (орыс)',R203),L(d,'S4',ER,SE,'6-сынып 2-топ',R203)]),
+  ...[1,3].flatMap(d=>[L(d,'S3',ER,SE,'6-сынып 3-топ',R203),L(d,'S4',ER,SE,'6-сынып 4-топ',R203)]),
+  L(4,'S1',ER,SE,'6-сынып 3-топ',R203), L(4,'S2',ER,SE,'6-сынып 4-топ',R203),
 
-  // ── 1-ауысым: Матем.ұстаз1 (201) ──
-  ...['Дүйсенбі','Сәрсенбі'].flatMap(d=>[
-    L(d,'S3',M1,M,'6-сынып 2-топ','201'), L(d,'S4',M1,M,'6-сынып 1-топ (орыс)','201')]),
-  ...['Сейсенбі','Бейсенбі'].flatMap(d=>[
-    L(d,'S3',M1,M,'6-сынып 4-топ','201'), L(d,'S4',M1,M,'6-сынып 3-топ','201')]),
-  L('Дүйсенбі','S2',M1,M,'7-сынып 2-топ',R203),
-  L('Сәрсенбі','S2',M1,M,'7-сынып 1-топ',R203),
-  L('Жұма','S3',M1,M,'7-сынып 2-топ','201'),
-  L('Жұма','S4',M1,M,'7-сынып 1-топ','201'),
+  // ── Матем.ұстаз1 (201) ──
+  ...[0,2].flatMap(d=>[L(d,'S3',M1,SM,'6-сынып 2-топ','201'),L(d,'S4',M1,SM,'6-сынып 1-топ (орыс)','201')]),
+  ...[1,3].flatMap(d=>[L(d,'S3',M1,SM,'6-сынып 4-топ','201'),L(d,'S4',M1,SM,'6-сынып 3-топ','201')]),
+  L(0,'S2',M1,SM,'7-сынып 2-топ',R203), L(2,'S2',M1,SM,'7-сынып 1-топ',R203),
+  L(4,'S3',M1,SM,'7-сынып 2-топ','201'), L(4,'S4',M1,SM,'7-сынып 1-топ','201'),
 
-  // ── 1-ауысым: Ағылшын ұстаз1 (202) ──
-  L('Дүйсенбі','S3',A1,E,'7-сынып 2-топ','202'),
-  L('Дүйсенбі','S4',A1,E,'7-сынып 1-топ','202'),
-  L('Сәрсенбі','S3',A1,E,'7-сынып 1-топ','202'),
-  L('Сәрсенбі','S4',A1,E,'7-сынып 2-топ','202'),
-  L('Жұма','S3',A1,E,'7-сынып 1-топ','202'),
-  L('Жұма','S4',A1,E,'7-сынып 2-топ','202'),
-  ...['Сейсенбі','Бейсенбі'].flatMap(d=>[
-    L(d,'S3',A1,E,'7-сынып 3-топ','202'), L(d,'S4',A1,E,'8-сынып 1-топ','202')]),
-  L('Жұма','S1',A1,E,'7-сынып 3-топ',TN),
-  L('Жұма','S2',A1,E,'8-сынып 1-топ',TN),
+  // ── Ағылшын ұстаз1 (202) ──
+  L(0,'S3',A1,SE,'7-сынып 2-топ','202'), L(0,'S4',A1,SE,'7-сынып 1-топ','202'),
+  L(2,'S3',A1,SE,'7-сынып 1-топ','202'), L(2,'S4',A1,SE,'7-сынып 2-топ','202'),
+  L(4,'S3',A1,SE,'7-сынып 1-топ','202'), L(4,'S4',A1,SE,'7-сынып 2-топ','202'),
+  ...[1,3].flatMap(d=>[L(d,'S3',A1,SE,'7-сынып 3-топ','202'),L(d,'S4',A1,SE,'8-сынып 1-топ','202')]),
+  L(4,'S1',A1,SE,'7-сынып 3-топ',TN), L(4,'S2',A1,SE,'8-сынып 1-топ',TN),
 
-  // ── 1-ауысым: Ағылшын ұстаз2 (211) ──
-  ...['Дүйсенбі','Сәрсенбі','Жұма'].map(d=>L(d,'S3',A2,E,'8-сынып 2-топ','211')),
+  // ── Ағылшын ұстаз2 (211, 1-ауысым) ──
+  ...[0,2,4].map(d=>L(d,'S3',A2,SE,'8-сынып 2-топ','211')),
 
-  // ── 1-ауысым: Әділжан (212) ──
-  ...['Сейсенбі','Бейсенбі'].flatMap(d=>[
-    L(d,'S3',AD,M,'8-сынып 1-топ','212'), L(d,'S4',AD,M,'7-сынып 3-топ','212')]),
-  ...['Дүйсенбі','Сәрсенбі'].map(d=>L(d,'S4',AD,M,'8-сынып 2-топ','212')),
+  // ── Әділжан (212, 1-ауысым) — тек S1/S2! ──
+  // Д/Сәр: S2 → 8-2
+  L(0,'S2',AD,SM,'8-сынып 2-топ','212'), L(2,'S2',AD,SM,'8-сынып 2-топ','212'),
+  // Сей/Бей: S1 → 8-1, S2 → 7-3
+  ...[1,3].flatMap(d=>[L(d,'S1',AD,SM,'8-сынып 1-топ','212'),L(d,'S2',AD,SM,'7-сынып 3-топ','212')]),
 
-  // ── 2-ауысым: Ағылшын ұстаз2 (203) ──
-  ...['Дүйсенбі','Сәрсенбі','Жұма'].flatMap(d=>[
-    L(d,'T1',A2,E,'4-сынып 2-топ',R203),
-    L(d,'T2',A2,E,'4-сынып 3-топ',R203),
-    L(d,'T3',A2,E,'5-сынып 2-топ',R203)]),
+  // ── Ағылшын ұстаз2 (203, 2-ауысым) ──
+  ...[0,2,4].flatMap(d=>[
+    L(d,'T1',A2,SE,'4-сынып 2-топ',R203),
+    L(d,'T2',A2,SE,'4-сынып 3-топ',R203),
+    L(d,'T3',A2,SE,'5-сынып 2-топ',R203),
+    L(d,'T4',A2,SE,'4-сынып 4-топ',R203),  // жаңа 4-4 топ
+  ]),
 
-  // ── 2-ауысым: Әділжан (Таным — бұрынғы 222) ──
-  ...['Дүйсенбі','Сәрсенбі'].flatMap(d=>[
-    L(d,'T1',AD,M,'4-сынып 3-топ',TN),
-    L(d,'T2',AD,M,'4-сынып 2-топ',TN),
-    L(d,'T4',AD,M,'5-сынып 2-топ',TN)]),
+  // ── Әділжан (Таным, 2-ауысым) — бұрынғы 222 ──
+  ...[0,2].flatMap(d=>[
+    L(d,'T1',AD,SM,'4-сынып 3-топ',TN),
+    L(d,'T2',AD,SM,'4-сынып 2-топ',TN),
+    L(d,'T3',AD,SM,'4-сынып 4-топ',TN),  // жаңа 4-4 топ математика
+    L(d,'T4',AD,SM,'5-сынып 2-топ',TN),
+  ]),
 
-  // ── 2-ауысым: Фарида (КЗ — бұрынғы Таным) ──
-  ...['Сейсенбі','Бейсенбі','Жұма'].flatMap(d=>[
-    L(d,'T1',F,E,'5-сынып 3-топ',KZ),
-    L(d,'T2',F,E,'5-сынып 4-топ',KZ),
-    L(d,'T3',F,E,'9-сынып 1-топ',KZ)]),
+  // ── Фарида (КЗ, 2-ауысым, 14:30-дан) ──
+  ...[1,3,4].flatMap(d=>[
+    L(d,'F1',F,SE,'5-сынып 3-топ',KZ),
+    L(d,'F2',F,SE,'5-сынып 4-топ',KZ),
+    L(d,'F3',F,SE,'9-сынып 1-топ',KZ),
+  ]),
 
-  // ── 2-ауысым: Тілекші (203 — Сей/Бей А2 жоқ) ──
-  ...['Сейсенбі','Бейсенбі'].flatMap(d=>[
-    L(d,'T1',T,M,'5-сынып 4-топ',R203),
-    L(d,'T2',T,M,'5-сынып 3-топ',R203),
-    L(d,'T4',T,M,'9-сынып 1-топ',R203)]),
+  // ── Тілекші (203, 2-ауысым — Сей/Бей) ──
+  ...[1,3].flatMap(d=>[
+    L(d,'T1',TL,SM,'5-сынып 4-топ',R203),
+    L(d,'T2',TL,SM,'5-сынып 3-топ',R203),
+    L(d,'T4',TL,SM,'9-сынып 1-топ',R203),
+  ]),
 ];
 
-// ─── Group filter populate ───
+// Group filter
 const groups=[...new Set(ALL.map(r=>r.group))].sort((a,b)=>{
-  const n1=parseInt(a),n2=parseInt(b); return n1!==n2?n1-n2:a.localeCompare(b,'kk');
+  const n1=parseInt(a),n2=parseInt(b);return n1!==n2?n1-n2:a.localeCompare(b,'kk');
 });
 const fg=document.getElementById('f-group');
 groups.forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=g;fg.appendChild(o);});
 
-// ─── Legend ───
-let legendMode='tutor';
-function showLegend(mode){
-  legendMode=mode;
-  document.querySelectorAll('.ltab').forEach((b,i)=>b.classList.toggle('active',(i===0&&mode==='tutor')||(i===1&&mode==='group')));
-  const el=document.getElementById('legend-content');
-  if(mode==='tutor'){
-    el.innerHTML=Object.entries(TUTORS).map(([name,cfg])=>
-      `<div class="leg-item"><div class="leg-dot" style="background:${cfg.color}"></div>${name}</div>`
-    ).join('');
-  } else {
-    const cls=[2,3,4,5,6,7,8,9];
-    el.innerHTML=cls.map(c=>{
-      const cc=CLASS_COLORS[c];
-      return `<div class="leg-item"><div class="leg-rect" style="background:${cc.bg};border:2px solid ${cc.border}"></div>${c}-сынып</div>`;
-    }).join('');
-  }
-}
-showLegend('tutor');
+// ═══════════════════════════════
+// HELPERS
+// ═══════════════════════════════
+function dayName(idx){return t('days')[idx];}
+function shiftLabel(s){return s==='1'?t('shift1'):t('shift2');}
+function subjLabel(s){return s===SE?t('subj-e'):t('subj-m');}
 
-// ─── View switching ───
+function badgeSubj(s){
+  return`<span class="badge badge-${s===SE?'eng':'math'}">${subjLabel(s)}</span>`;
+}
+function badgeShift(s){
+  return`<span class="badge ${s==='1'?'badge-s1':'badge-s2'}">${shiftLabel(s)}</span>`;
+}
+function tutorDot(name){
+  const cfg=TUTORS[name];if(!cfg)return'';
+  return`<span class="tutor-dot" style="background:${cfg.color}"></span>`;
+}
+function tutorTag(name){
+  const cfg=TUTORS[name]||{color:'#888',bg:'#eee'};
+  return`<span style="background:${cfg.bg};color:${cfg.color};border-radius:4px;padding:2px 6px;font-size:.7rem;font-weight:600;white-space:nowrap;display:inline-flex;align-items:center;gap:3px">${tutorDot(name)}${name}</span>`;
+}
+function groupTag(g){
+  const c=groupColor(g);
+  return`<span style="background:${c.bg};border:1.5px solid ${c.border};color:${c.border};border-radius:4px;padding:2px 6px;font-size:.7rem;font-weight:700;white-space:nowrap">${g}</span>`;
+}
+function slotItem(r){
+  const tc=TUTORS[r.tutor]||{color:'#888',bg:'#eee'};
+  const grc=groupColor(r.group);
+  return`<div class="slot-item si-${r.subject===SE?'eng':'math'}" style="border-left:3px solid ${tc.color}">
+    <div class="si-grp"><span style="background:${grc.bg};border:1px solid ${grc.border};color:${grc.border};border-radius:3px;padding:1px 4px;font-size:.68rem;font-weight:700">${r.group}</span></div>
+    <div class="si-info">${tutorDot(r.tutor)}<span>${r.tutor}</span> · ${r.room}</div>
+  </div>`;
+}
+
+// ═══════════════════════════════
+// LEGEND
+// ═══════════════════════════════
+
+
+
+// ═══════════════════════════════
+// VIEW SWITCHING
+// ═══════════════════════════════
 let currentView='table';
 function setView(v){
   currentView=v;
   ['table','cards','week'].forEach(x=>{
     document.getElementById('view-'+x).style.display=x===v?'':'none';
-    const hb=document.getElementById('v-'+x); if(hb) hb.classList.toggle('active',x===v);
-    const bb=document.getElementById('bn-'+x); if(bb) bb.classList.toggle('active',x===v);
+    const hb=document.getElementById('v-'+x);if(hb)hb.classList.toggle('active',x===v);
+    const bb=document.getElementById('bn-'+x);if(bb)bb.classList.toggle('active',x===v);
   });
   applyFilters();
 }
 
-// ─── Filters ───
+// ═══════════════════════════════
+// FILTERS
+// ═══════════════════════════════
 function getFilters(){
   return{
     shift:document.getElementById('f-shift').value,
@@ -412,66 +523,54 @@ function clearFilters(){
 }
 function filterData(f,data){
   return data.filter(r=>
-    (!f.shift||r.shift===f.shift)&&(!f.day||r.day===f.day)&&
-    (!f.subj||r.subject===f.subj)&&(!f.tutor||r.tutor===f.tutor)&&
-    (!f.room||r.room===f.room)&&(!f.group||r.group===f.group));
+    (!f.shift||r.shift===f.shift)&&
+    (f.day===''||r.dayIdx===parseInt(f.day))&&
+    (!f.subj||r.subject===f.subj)&&
+    (!f.tutor||r.tutor===f.tutor)&&
+    (!f.room||r.room===f.room)&&
+    (!f.group||r.group===f.group));
 }
-function sorted(data){return[...data].sort((a,b)=>DORD[a.day]-DORD[b.day]||SORDER[a.slot]-SORDER[b.slot]);}
+function sorted(data){
+  return[...data].sort((a,b)=>a.dayIdx-b.dayIdx||SORDER[a.slot]-SORDER[b.slot]);
+}
 
-// ─── Color helpers ───
-function tutorDot(name){
-  const cfg=TUTORS[name]; if(!cfg) return '';
-  return `<span class="tutor-dot" style="background:${cfg.color}" title="${name}"></span>`;
-}
-function tutorTag(name){
-  const cfg=TUTORS[name]||{color:'#888',bg:'#eee'};
-  return `<span style="background:${cfg.bg};color:${cfg.color};border-radius:4px;padding:2px 7px;font-size:.72rem;font-weight:600;white-space:nowrap;display:inline-flex;align-items:center;gap:4px">${tutorDot(name)}${name}</span>`;
-}
-function groupTag(g){
-  const c=groupColor(g);
-  return `<span style="background:${c.bg};border:1.5px solid ${c.border};color:${c.border};border-radius:4px;padding:2px 7px;font-size:.72rem;font-weight:700;white-space:nowrap">${g}</span>`;
-}
-function badgeSubj(s){return`<span class="badge badge-${s===E?'eng':'math'}">${s}</span>`;}
-function badgeShift(s){return`<span class="badge ${s==='1-ауысым'?'badge-s1':'badge-s2'}">${s}</span>`;}
-
-// ─── Table render ───
+// ═══════════════════════════════
+// RENDER
+// ═══════════════════════════════
 function renderTable(data){
   const tbody=document.getElementById('tbl-body');
   const empty=document.getElementById('tbl-empty');
+  document.querySelector('#tbl-empty span').textContent=t('no-data');
   if(!data.length){tbody.innerHTML='';empty.style.display='block';return;}
   empty.style.display='none';
-  const gc=groupColor;
   tbody.innerHTML=sorted(data).map(r=>{
-    const tc=TUTORS[r.tutor]||{color:'#888',bg:'#eee'};
-    const grc=gc(r.group);
-    return `<tr style="border-left:4px solid ${tc.color}">
-      <td><b>${r.day}</b></td>
+    const tc=TUTORS[r.tutor]||{color:'#888'};
+    const grc=groupColor(r.group);
+    return`<tr style="border-left:4px solid ${tc.color}">
+      <td><b>${dayName(r.dayIdx)}</b></td>
       <td>${badgeShift(r.shift)}</td>
-      <td style="white-space:nowrap;font-variant-numeric:tabular-nums;font-size:.77rem">${r.time}</td>
-      <td style="font-size:.78rem">${r.room}</td>
+      <td style="white-space:nowrap;font-size:.76rem">${r.time}</td>
+      <td style="font-size:.76rem">${r.room}</td>
       <td>${tutorTag(r.tutor)}</td>
       <td>${badgeSubj(r.subject)}</td>
-      <td><span style="background:${grc.bg};border:1.5px solid ${grc.border};color:${grc.border};border-radius:4px;padding:2px 6px;font-size:.73rem;font-weight:700">${r.group}</span></td>
+      <td><span style="background:${grc.bg};border:1.5px solid ${grc.border};color:${grc.border};border-radius:4px;padding:2px 6px;font-size:.71rem;font-weight:700">${r.group}</span></td>
     </tr>`;
   }).join('');
 }
 
-// ─── Cards render ───
 function renderCards(data){
   const wrap=document.getElementById('view-cards');
-  if(!data.length){wrap.innerHTML='<div class="empty"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Сабақ табылмады</div>';return;}
+  if(!data.length){wrap.innerHTML=`<div class="empty"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>${t('no-data')}</div>`;return;}
   wrap.innerHTML=sorted(data).map(r=>{
-    const tc=TUTORS[r.tutor]||{color:'#888',bg:'#eee'};
+    const tc=TUTORS[r.tutor]||{color:'#888'};
     const grc=groupColor(r.group);
-    return `<div class="card" style="border-left:4px solid ${tc.color}">
+    return`<div class="card" style="border-left:4px solid ${tc.color}">
       <div class="card-top">
-        <div class="card-group">
-          <span style="background:${grc.bg};border:1.5px solid ${grc.border};color:${grc.border};border-radius:5px;padding:2px 7px;font-size:.8rem;font-weight:700">${r.group}</span>
-        </div>
-        <div class="card-subj ${r.subject===E?'eng':'math'}">${r.subject}</div>
+        <div class="card-group"><span style="background:${grc.bg};border:1.5px solid ${grc.border};color:${grc.border};border-radius:5px;padding:2px 7px;font-size:.78rem;font-weight:700">${r.group}</span></div>
+        <div class="card-subj ${r.subject===SE?'eng':'math'}">${subjLabel(r.subject)}</div>
       </div>
       <div class="card-meta">
-        <span class="tag">📅 ${r.day}</span>
+        <span class="tag">📅 ${dayName(r.dayIdx)}</span>
         <span class="tag">🕐 ${r.time}</span>
         <span class="tag">📍 ${r.room}</span>
         ${tutorTag(r.tutor)}
@@ -481,56 +580,40 @@ function renderCards(data){
   }).join('');
 }
 
-// ─── Week render ───
 function renderWeek(data){
   const wrap=document.getElementById('view-week');
-  if(!data.length){wrap.innerHTML='<div class="empty"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Сабақ табылмады</div>';return;}
+  if(!data.length){wrap.innerHTML=`<div class="empty"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>${t('no-data')}</div>`;return;}
   const f=getFilters();
   const byDS={};
-  data.forEach(r=>{const k=r.day+'|'+r.slot;(byDS[k]=byDS[k]||[]).push(r);});
-  const activeDays=f.day?[f.day]:DAYS;
-  const activeSlots=SLOTS.filter(s=>{
-    if(f.shift==='1-ауысым') return s.startsWith('S');
-    if(f.shift==='2-ауысым') return !s.startsWith('S');
-    return true;
-  });
-  const s1slots=activeSlots.filter(s=>s.startsWith('S'));
-  const s2slots=activeSlots.filter(s=>!s.startsWith('S'));
+  data.forEach(r=>{const k=r.dayIdx+'|'+r.slot;(byDS[k]=byDS[k]||[]).push(r);});
+  const activeDays=f.day!==''?[parseInt(f.day)]:[0,1,2,3,4];
+  const allSlots=f.shift==='1'?['S1','S2','S3','S4']:
+    f.shift==='2'?['T1','T2','T3','T4','F1','F2','F3']:
+    ['S1','S2','S3','S4','T1','T2','T3','T4','F1','F2','F3'];
+  const s1slots=allSlots.filter(s=>s.startsWith('S'));
+  const s2slots=allSlots.filter(s=>!s.startsWith('S'));
 
-  function slotItem(r){
-    const tc=TUTORS[r.tutor]||{color:'#888',bg:'#eee'};
-    const grc=groupColor(r.group);
-    return `<div class="slot-item si-${r.subject===E?'eng':'math'}" style="border-left:3px solid ${tc.color}">
-      <div class="si-grp">
-        <span style="background:${grc.bg};border:1px solid ${grc.border};color:${grc.border};border-radius:3px;padding:1px 5px;font-size:.7rem;font-weight:700">${r.group}</span>
-      </div>
-      <div class="si-info">${tutorDot(r.tutor)}<span>${r.tutor}</span> · ${r.room}</div>
-    </div>`;
-  }
-
-  // Mobile: day cards
+  // Mobile
   let mHtml='';
   activeDays.forEach(d=>{
-    const dayHasData=activeSlots.some(s=>(byDS[d+'|'+s]||[]).length>0);
-    if(!dayHasData) return;
-    mHtml+=`<div class="week-day-card"><div class="week-day-hdr">📅 ${d}</div>`;
+    const hasData=allSlots.some(s=>(byDS[d+'|'+s]||[]).length>0);
+    if(!hasData)return;
+    mHtml+=`<div class="week-day-card"><div class="week-day-hdr">📅 ${dayName(d)}</div>`;
     let lastShift='';
-    activeSlots.forEach(sl=>{
-      const items=byDS[d+'|'+sl]||[];
-      if(!items.length) return;
-      const sh=sl.startsWith('S')?'1-ауысым':'2-ауысым';
-      if(sh!==lastShift){
-        mHtml+=`<div class="week-shift-label">${sh==='1-ауысым'?'🌅 1-ауысым':'🌆 2-ауысым'}</div>`;
-        lastShift=sh;
-      }
+    allSlots.forEach(sl=>{
+      const items=byDS[d+'|'+sl]||[];if(!items.length)return;
+      const sh=sl.startsWith('S')?'1':'2';
+      if(sh!==lastShift){mHtml+=`<div class="week-shift-label">${t('lbl-s'+sh)}</div>`;lastShift=sh;}
       mHtml+=`<div class="week-slot-row"><div class="week-time">${TIME[sl]}</div><div class="week-items">${items.map(slotItem).join('')}</div></div>`;
     });
     mHtml+='</div>';
   });
 
-  // Desktop: grid table
-  function renderSlots(slots, html){
+  // Desktop table
+  function renderSlots(slots,html){
     slots.forEach(sl=>{
+      const hasAny=activeDays.some(d=>(byDS[d+'|'+sl]||[]).length>0);
+      if(!hasAny)return;
       html+=`<tr><td class="slot-label">${TIME[sl]}</td>`;
       activeDays.forEach(d=>{
         const items=byDS[d+'|'+sl]||[];
@@ -540,36 +623,40 @@ function renderWeek(data){
     });
     return html;
   }
-  let tHtml=`<table class="wg-table"><thead><tr><th>Уақыт</th>${activeDays.map(d=>`<th>${d}</th>`).join('')}</tr></thead><tbody>`;
+  let tHtml=`<table class="wg-table"><thead><tr><th>${t('col-time')}</th>${activeDays.map(d=>`<th>${dayName(d)}</th>`).join('')}</tr></thead><tbody>`;
   if(s1slots.length){
-    tHtml+=`<tr><td colspan="${activeDays.length+1}" style="background:var(--surface2);font-size:.73rem;font-weight:700;color:var(--text-muted);padding:5px 12px;border-bottom:1px solid var(--border)">🌅 1-АУЫСЫМ</td></tr>`;
+    tHtml+=`<tr><td colspan="${activeDays.length+1}" style="background:var(--surface2);font-size:.71rem;font-weight:700;color:var(--text-muted);padding:5px 10px;border-bottom:1px solid var(--border)">${t('lbl-s1')}</td></tr>`;
     tHtml=renderSlots(s1slots,tHtml);
   }
   if(s2slots.length){
-    tHtml+=`<tr><td colspan="${activeDays.length+1}" style="background:var(--surface2);font-size:.73rem;font-weight:700;color:var(--math);padding:5px 12px;border-bottom:1px solid var(--border)">🌆 2-АУЫСЫМ</td></tr>`;
+    tHtml+=`<tr><td colspan="${activeDays.length+1}" style="background:var(--surface2);font-size:.71rem;font-weight:700;color:var(--math);padding:5px 10px;border-bottom:1px solid var(--border)">${t('lbl-s2')}</td></tr>`;
     tHtml=renderSlots(s2slots,tHtml);
   }
   tHtml+='</tbody></table>';
   wrap.innerHTML=mHtml+tHtml;
 }
 
-// ─── Apply ───
+// ═══════════════════════════════
+// MAIN
+// ═══════════════════════════════
 function applyFilters(){
   const f=getFilters();
   const data=filterData(f,ALL);
-  const eCount=data.filter(r=>r.subject===E).length;
-  const mCount=data.filter(r=>r.subject===M).length;
-  const tutors=[...new Set(data.map(r=>r.tutor))].length;
+  const eCount=data.filter(r=>r.subject===SE).length;
+  const mCount=data.filter(r=>r.subject===SM).length;
+  const tCount=[...new Set(data.map(r=>r.tutor))].length;
   document.getElementById('stats-bar').innerHTML=`
-    <div class="stat-pill">Барлық: <b>${data.length}</b></div>
-    <div class="stat-pill">Ағылшын: <b>${eCount}</b></div>
-    <div class="stat-pill">Математика: <b>${mCount}</b></div>
-    <div class="stat-pill">Ұстаздар: <b>${tutors}</b></div>`;
+    <div class="stat-pill">${t('stat-all')} <b>${data.length}</b></div>
+    <div class="stat-pill">${t('stat-eng')} <b>${eCount}</b></div>
+    <div class="stat-pill">${t('stat-math')} <b>${mCount}</b></div>
+    <div class="stat-pill">${t('stat-tutors')} <b>${tCount}</b></div>`;
   if(currentView==='table') renderTable(data);
   else if(currentView==='cards') renderCards(data);
   else renderWeek(data);
 }
 
+// Init
+applyTranslations();
 applyFilters();
 </script>
 </body>
